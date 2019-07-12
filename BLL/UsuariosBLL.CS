@@ -12,13 +12,13 @@ namespace BLL
 {
    public class UsuariosBLL
     {
-        public static bool Guardar(Usuarios usuarios)
+        public static bool Guardar(Usuarios usuario)
         {
             bool estado = false;
             try
             {
                 Contexto context = new Contexto();
-                context.Usuarios.Add(usuarios);
+                context.Usuarios.Add(usuario);
                 context.SaveChanges();
                 estado = true;
 
@@ -31,14 +31,14 @@ namespace BLL
             return estado;
         }
 
-        public static bool Editar(Usuarios usuarios)
+        public static bool Editar(Usuarios usuario)
         {
             bool estado = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(usuarios).State = EntityState.Modified;
+                contexto.Entry(usuario).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     estado = true;
@@ -59,9 +59,9 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
-                Usuarios usuarios = contexto.Usuarios.Find(id);
+                Usuarios usuario = contexto.Usuarios.Find(id);
 
-                contexto.Usuarios.Remove(usuarios);
+                contexto.Usuarios.Remove(usuario);
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -95,12 +95,12 @@ namespace BLL
 
         public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> expression)
         {
-            List<Usuarios> usuarios = new List<Usuarios>();
+            List<Usuarios> usuario = new List<Usuarios>();
             Contexto contexto = new Contexto();
 
             try
             {
-                usuarios = contexto.Usuarios.Where(expression).ToList();
+                usuario = contexto.Usuarios.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -108,7 +108,7 @@ namespace BLL
                 throw;
             }
 
-            return usuarios;
+            return usuario;
         }
     }
 }

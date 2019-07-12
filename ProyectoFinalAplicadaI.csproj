@@ -52,16 +52,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\Consultas\cUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rUsuarios.Designer.cs">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,7 +83,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\cUsuarios.resx">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
+      <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,9 +106,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\Consultas\" />
-    <Folder Include="UI\Registros\" />
     <Folder Include="UI\Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_File_36861%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminar-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-búsqueda-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-búsqueda-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BLL\BLL.csproj">
+      <Project>{432a549e-a7d8-4237-80da-57ffa3e35020}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="Entidades\Entidades.csproj">
+      <Project>{411dfc3e-09d9-4d58-8453-b81a11ad0644}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

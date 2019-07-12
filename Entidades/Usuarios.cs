@@ -18,7 +18,8 @@ namespace Entidades
         public int NivelUsuario { get; set; }
 
         public string Usuario { get; set; }
-        public string Clave { get; set; }
+        public string Contraseña { get; set; }
+        public string Confirmar { get; set; }
         public DateTime FechaIngreso { get; set; }
 
         public Usuarios()
@@ -29,7 +30,8 @@ namespace Entidades
             this.Email = string.Empty;
             this.NivelUsuario = 0;
             this.Usuario = string.Empty;
-            this.Clave = string.Empty;
+            this.Contraseña = string.Empty;
+            this.Confirmar = string.Empty;
             this.FechaIngreso = DateTime.Now;
         }
     }

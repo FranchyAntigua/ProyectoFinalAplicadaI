@@ -1,0 +1,298 @@
+﻿namespace ProyectoFinalAplicadaI.UI.Registros
+{
+    partial class rUsuarios
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.NivelUsuarioComboBox = new System.Windows.Forms.ComboBox();
+            this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ContraseñatextBox = new System.Windows.Forms.TextBox();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.UsuariotextBox = new System.Windows.Forms.TextBox();
+            this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ConfirmarTextBox = new System.Windows.Forms.TextBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // NivelUsuarioComboBox
+            // 
+            this.NivelUsuarioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NivelUsuarioComboBox.FormattingEnabled = true;
+            this.NivelUsuarioComboBox.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario"});
+            this.NivelUsuarioComboBox.Location = new System.Drawing.Point(78, 119);
+            this.NivelUsuarioComboBox.Name = "NivelUsuarioComboBox";
+            this.NivelUsuarioComboBox.Size = new System.Drawing.Size(139, 21);
+            this.NivelUsuarioComboBox.TabIndex = 100;
+            // 
+            // FechaIngresoDateTimePicker
+            // 
+            this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(80, 267);
+            this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
+            this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(137, 20);
+            this.FechaIngresoDateTimePicker.TabIndex = 95;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1, 267);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.TabIndex = 94;
+            this.label5.Text = "FechaI ngreso";
+            // 
+            // IdNumericUpDown
+            // 
+            this.IdNumericUpDown.Location = new System.Drawing.Point(80, 6);
+            this.IdNumericUpDown.Name = "IdNumericUpDown";
+            this.IdNumericUpDown.Size = new System.Drawing.Size(41, 20);
+            this.IdNumericUpDown.TabIndex = 93;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Contraseña";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 91;
+            this.label6.Text = "Email";
+            // 
+            // ContraseñatextBox
+            // 
+            this.ContraseñatextBox.Location = new System.Drawing.Point(78, 188);
+            this.ContraseñatextBox.Name = "ContraseñatextBox";
+            this.ContraseñatextBox.Size = new System.Drawing.Size(139, 20);
+            this.ContraseñatextBox.TabIndex = 90;
+            // 
+            // EmailtextBox
+            // 
+            this.EmailtextBox.Location = new System.Drawing.Point(78, 76);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(139, 20);
+            this.EmailtextBox.TabIndex = 89;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "Usuario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "Nivel Usuario";
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Location = new System.Drawing.Point(12, 49);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(44, 13);
+            this.Nombre.TabIndex = 86;
+            this.Nombre.Text = "Nombre";
+            this.Nombre.UseMnemonic = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 13);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "ID";
+            // 
+            // UsuariotextBox
+            // 
+            this.UsuariotextBox.Location = new System.Drawing.Point(78, 152);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.Size = new System.Drawing.Size(139, 20);
+            this.UsuariotextBox.TabIndex = 84;
+            // 
+            // NombretextBox
+            // 
+            this.NombretextBox.Location = new System.Drawing.Point(78, 44);
+            this.NombretextBox.Name = "NombretextBox";
+            this.NombretextBox.Size = new System.Drawing.Size(139, 20);
+            this.NombretextBox.TabIndex = 83;
+            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretexBox);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "Confirmar ";
+            // 
+            // ConfirmarTextBox
+            // 
+            this.ConfirmarTextBox.Location = new System.Drawing.Point(78, 226);
+            this.ConfirmarTextBox.Name = "ConfirmarTextBox";
+            this.ConfirmarTextBox.Size = new System.Drawing.Size(139, 20);
+            this.ConfirmarTextBox.TabIndex = 101;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.BackColor = System.Drawing.Color.White;
+            this.Buscarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_241;
+            this.Buscarbutton.Location = new System.Drawing.Point(127, 6);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(65, 32);
+            this.Buscarbutton.TabIndex = 143;
+            this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.BackColor = System.Drawing.Color.White;
+            this.EliminarButton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_eliminar_26;
+            this.EliminarButton.Location = new System.Drawing.Point(154, 293);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(63, 49);
+            this.EliminarButton.TabIndex = 142;
+            this.EliminarButton.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
+            this.button2.Location = new System.Drawing.Point(15, 293);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 49);
+            this.button2.TabIndex = 141;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
+            this.button3.Location = new System.Drawing.Point(85, 293);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(63, 49);
+            this.button3.TabIndex = 140;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // rUsuarios
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(232, 351);
+            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ConfirmarTextBox);
+            this.Controls.Add(this.NivelUsuarioComboBox);
+            this.Controls.Add(this.FechaIngresoDateTimePicker);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.IdNumericUpDown);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ContraseñatextBox);
+            this.Controls.Add(this.EmailtextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Nombre);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.UsuariotextBox);
+            this.Controls.Add(this.NombretextBox);
+            this.Name = "rUsuarios";
+            this.Text = "Registro de Usuario";
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.ComboBox NivelUsuarioComboBox;
+        private System.Windows.Forms.DateTimePicker FechaIngresoDateTimePicker;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ContraseñatextBox;
+        private System.Windows.Forms.TextBox EmailtextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Nombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox UsuariotextBox;
+        private System.Windows.Forms.TextBox NombretextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox ConfirmarTextBox;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+    }
+}
