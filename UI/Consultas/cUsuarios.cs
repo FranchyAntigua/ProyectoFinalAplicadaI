@@ -20,6 +20,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         public cUsuarios()
         {
             InitializeComponent();
+            CriterioTextBox.ReadOnly = true;
             FiltroComboBox.SelectedIndex = 0;
         }
          Expression<Func<Usuarios, bool>> filtro = a => true;
@@ -27,22 +28,29 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         {
            
             int id;
-            switch (FiltroComboBox.SelectedIndex)
+            if (FiltroComboBox.SelectedIndex == 1)
             {
-                case 0://Todo.
-                    break;
-                case 1://Filtrando por ID 
-                    id = Convert.ToInt32(CriterioTextBox.Text);
-                    filtro = a => a.UsuarioId == id;
-                    break;
+                CriterioTextBox.ReadOnly = false;
+                if (String.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                {
+                    MyErrorProvider.SetError(CriterioTextBox, "No puede estar vacio");
+                    return;
+                }
+                switch (FiltroComboBox.SelectedIndex)
+                {
+                    case 0://Todo.
+                        break;
+                    case 1://Filtrando por ID 
+                        id = Convert.ToInt32(CriterioTextBox.Text);
+                        filtro = a => a.UsuarioId == id;
+                        break;
+                }
 
             }
 
             listaUsuarios = UsuariosBLL.GetList(filtro);
             UsuariosConsultaDataGridView.DataSource = listaUsuarios;
         }
-
-        
 
         private void ImprimirButton_Click_1(object sender, EventArgs e)
         {
@@ -62,13 +70,11 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         {
             if (FiltroComboBox.SelectedIndex == 1)
             {
-
+                CriterioTextBox.ReadOnly = false;
             }
         }
-
-        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        private void CriterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
@@ -96,5 +102,6 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
-}
+     }
+   }
+

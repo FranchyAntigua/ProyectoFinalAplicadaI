@@ -66,7 +66,7 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(114, 20);
             this.CriterioTextBox.TabIndex = 26;
-            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
+            this.CriterioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CriterioTextBox_KeyPress);
             // 
             // label2
             // 
@@ -82,6 +82,7 @@
             // 
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
+            "Todo",
             "Id"});
             this.FiltroComboBox.Location = new System.Drawing.Point(53, 7);
             this.FiltroComboBox.Name = "FiltroComboBox";
