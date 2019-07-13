@@ -10,17 +10,21 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-   public class UsuariosBLL
+    public class UsuariosBLL
     {
         public static bool Guardar(Usuarios usuario)
         {
             bool estado = false;
+            Contexto context = new Contexto();
             try
             {
-                Contexto context = new Contexto();
+
+
                 context.Usuarios.Add(usuario);
                 context.SaveChanges();
                 estado = true;
+
+
 
             }
             catch (Exception)

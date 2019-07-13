@@ -26,7 +26,12 @@ namespace ProyectoFinalAplicadaI
 
         private void ConsultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           new cUsuarios ().ShowDialog();
+          
+        }
+
+        private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new cUsuarios().ShowDialog();
         }
     }
 }

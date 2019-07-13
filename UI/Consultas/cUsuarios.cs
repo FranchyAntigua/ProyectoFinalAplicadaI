@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using ProyectoFinalAplicadaI.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +16,16 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
+        List<Usuarios> listaUsuarios = new List<Usuarios>();
         public cUsuarios()
         {
             InitializeComponent();
-            CriterioTextBox.ReadOnly = true;
             FiltroComboBox.SelectedIndex = 0;
         }
-
+         Expression<Func<Usuarios, bool>> filtro = a => true;
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            Expression<Func<Usuarios, bool>> filtro = a => true;
+           
             int id;
             switch (FiltroComboBox.SelectedIndex)
             {
@@ -35,7 +36,24 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
             }
 
-            UsuariosConsultaDataGridView.DataSource = UsuariosBLL.GetList(filtro);
+            listaUsuarios = UsuariosBLL.GetList(filtro);
+            UsuariosConsultaDataGridView.DataSource = listaUsuarios;
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            if (listaUsuarios.Count == 0)
+            {
+                MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
+                rReporte.Show();
+            }
+
+
         }
     }
-    }
+}

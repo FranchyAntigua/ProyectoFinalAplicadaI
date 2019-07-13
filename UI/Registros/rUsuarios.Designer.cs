@@ -61,7 +61,7 @@
             this.NivelUsuarioComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.NivelUsuarioComboBox.Location = new System.Drawing.Point(78, 119);
+            this.NivelUsuarioComboBox.Location = new System.Drawing.Point(135, 132);
             this.NivelUsuarioComboBox.Name = "NivelUsuarioComboBox";
             this.NivelUsuarioComboBox.Size = new System.Drawing.Size(139, 21);
             this.NivelUsuarioComboBox.TabIndex = 100;
@@ -70,7 +70,7 @@
             // 
             this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(80, 267);
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(137, 280);
             this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
             this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(137, 20);
             this.FechaIngresoDateTimePicker.TabIndex = 95;
@@ -78,7 +78,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 267);
+            this.label5.Location = new System.Drawing.Point(58, 280);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 94;
@@ -86,7 +86,7 @@
             // 
             // IdNumericUpDown
             // 
-            this.IdNumericUpDown.Location = new System.Drawing.Point(80, 6);
+            this.IdNumericUpDown.Location = new System.Drawing.Point(137, 19);
             this.IdNumericUpDown.Name = "IdNumericUpDown";
             this.IdNumericUpDown.Size = new System.Drawing.Size(41, 20);
             this.IdNumericUpDown.TabIndex = 93;
@@ -94,7 +94,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 193);
+            this.label7.Location = new System.Drawing.Point(69, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 92;
@@ -103,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 84);
+            this.label6.Location = new System.Drawing.Point(69, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 91;
@@ -111,14 +111,14 @@
             // 
             // ContraseñatextBox
             // 
-            this.ContraseñatextBox.Location = new System.Drawing.Point(78, 188);
+            this.ContraseñatextBox.Location = new System.Drawing.Point(135, 201);
             this.ContraseñatextBox.Name = "ContraseñatextBox";
             this.ContraseñatextBox.Size = new System.Drawing.Size(139, 20);
             this.ContraseñatextBox.TabIndex = 90;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(78, 76);
+            this.EmailtextBox.Location = new System.Drawing.Point(135, 89);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(139, 20);
             this.EmailtextBox.TabIndex = 89;
@@ -126,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 160);
+            this.label4.Location = new System.Drawing.Point(69, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 88;
@@ -135,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 124);
+            this.label3.Location = new System.Drawing.Point(69, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 87;
@@ -144,7 +144,7 @@
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(12, 49);
+            this.Nombre.Location = new System.Drawing.Point(69, 62);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(44, 13);
             this.Nombre.TabIndex = 86;
@@ -154,7 +154,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 13);
+            this.label2.Location = new System.Drawing.Point(71, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 13);
             this.label2.TabIndex = 85;
@@ -162,14 +162,14 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(78, 152);
+            this.UsuariotextBox.Location = new System.Drawing.Point(135, 165);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(139, 20);
             this.UsuariotextBox.TabIndex = 84;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(78, 44);
+            this.NombretextBox.Location = new System.Drawing.Point(135, 57);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(139, 20);
             this.NombretextBox.TabIndex = 83;
@@ -178,7 +178,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 231);
+            this.label1.Location = new System.Drawing.Point(71, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 102;
@@ -186,7 +186,7 @@
             // 
             // ConfirmarTextBox
             // 
-            this.ConfirmarTextBox.Location = new System.Drawing.Point(78, 226);
+            this.ConfirmarTextBox.Location = new System.Drawing.Point(135, 239);
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
             this.ConfirmarTextBox.Size = new System.Drawing.Size(139, 20);
             this.ConfirmarTextBox.TabIndex = 101;
@@ -199,7 +199,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.White;
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_241;
-            this.Buscarbutton.Location = new System.Drawing.Point(127, 6);
+            this.Buscarbutton.Location = new System.Drawing.Point(184, 19);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(65, 32);
             this.Buscarbutton.TabIndex = 143;
@@ -210,7 +210,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.Color.White;
             this.EliminarButton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_eliminar_26;
-            this.EliminarButton.Location = new System.Drawing.Point(154, 293);
+            this.EliminarButton.Location = new System.Drawing.Point(211, 306);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(63, 49);
             this.EliminarButton.TabIndex = 142;
@@ -220,7 +220,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
-            this.button2.Location = new System.Drawing.Point(15, 293);
+            this.button2.Location = new System.Drawing.Point(72, 306);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 49);
             this.button2.TabIndex = 141;
@@ -231,7 +231,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
-            this.button3.Location = new System.Drawing.Point(85, 293);
+            this.button3.Location = new System.Drawing.Point(142, 306);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(63, 49);
             this.button3.TabIndex = 140;
@@ -242,7 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 351);
+            this.ClientSize = new System.Drawing.Size(361, 386);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.button2);

@@ -35,7 +35,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 nivelusu = 2;
 
             usuario.Usuario = UsuariotextBox.Text;
-            usuario.Contraseña = ContraseñatextBox.Text;
+            usuario.Contrasena = ContraseñatextBox.Text;
             usuario.Confirmar = ConfirmarTextBox.Text;
             
 
@@ -117,8 +117,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 FechaIngresoDateTimePicker.Value = usuario.FechaIngreso;
                 NombretextBox.Text = usuario.Usuario;
                 UsuariotextBox.Text = usuario.Usuario;
-                ContraseñatextBox.Text = usuario.Contraseña;
-                ConfirmarTextBox.Text = usuario.Contraseña;
+                ContraseñatextBox.Text = usuario.Contrasena;
+                ConfirmarTextBox.Text = usuario.Contrasena;
                 NivelUsuarioComboBox.Text = usuario.NivelUsuario.ToString();
             }
             else

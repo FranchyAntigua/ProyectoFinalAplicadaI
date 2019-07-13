@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ImprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBuscar.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_24;
             this.buttonBuscar.Location = new System.Drawing.Point(432, 12);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(88, 43);
@@ -90,11 +92,22 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Filtro";
             // 
+            // ImprimirButton
+            // 
+            this.ImprimirButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ImprimirButton.Location = new System.Drawing.Point(451, 200);
+            this.ImprimirButton.Name = "ImprimirButton";
+            this.ImprimirButton.Size = new System.Drawing.Size(88, 43);
+            this.ImprimirButton.TabIndex = 29;
+            this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
+            // 
             // cUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.UsuariosConsultaDataGridView);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.CriterioTextBox);
@@ -117,5 +130,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ImprimirButton;
     }
 }
