@@ -29,7 +29,9 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             int id;
             switch (FiltroComboBox.SelectedIndex)
             {
-                case 0://Filtrando por ID 
+                case 0://Todo.
+                    break;
+                case 1://Filtrando por ID 
                     id = Convert.ToInt32(CriterioTextBox.Text);
                     filtro = a => a.UsuarioId == id;
                     break;
@@ -40,7 +42,9 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             UsuariosConsultaDataGridView.DataSource = listaUsuarios;
         }
 
-        private void ImprimirButton_Click(object sender, EventArgs e)
+        
+
+        private void ImprimirButton_Click_1(object sender, EventArgs e)
         {
             if (listaUsuarios.Count == 0)
             {
@@ -50,10 +54,47 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             else
             {
                 rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
-                rReporte.Show();
+                rReporte.Visualizar("CrpUsuarios");
             }
+        }
 
+        private void FiltroComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (FiltroComboBox.SelectedIndex == 1)
+            {
 
+            }
+        }
+
+        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se puede digitar Números", "Falló",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se escribir Letras", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se puede digitar Números", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

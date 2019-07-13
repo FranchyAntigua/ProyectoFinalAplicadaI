@@ -21,7 +21,13 @@ namespace ProyectoFinalAplicadaI
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new rUsuarios ().ShowDialog();
+            rUsuarios rus = new rUsuarios()
+            {
+                MdiParent = this
+            };
+                
+                
+                rus.Show();
         }
 
         private void ConsultasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,6 +38,16 @@ namespace ProyectoFinalAplicadaI
         private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new cUsuarios().ShowDialog();
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

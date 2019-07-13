@@ -63,6 +63,16 @@ namespace ProyectoFinalAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FA_TODO {
+            get {
+                object obj = ResourceManager.GetObject("FA TODO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_búsqueda_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-búsqueda-24", resourceCulture);
@@ -103,9 +113,29 @@ namespace ProyectoFinalAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_imprimir_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-imprimir-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New_File_36861_1_ {
             get {
                 object obj = ResourceManager.GetObject("New_File_36861(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Printer_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Printer-32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
