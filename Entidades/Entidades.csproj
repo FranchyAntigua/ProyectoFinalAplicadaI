@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Articulos.cs" />
     <Compile Include="Clientes.cs" />
+    <Compile Include="EntradaArticulos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>

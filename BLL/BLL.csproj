@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ArticulosBLL.cs" />
     <Compile Include="ClientesBLL.cs" />
+    <Compile Include="EntradaArticulosBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosBLL.cs" />
   </ItemGroup>
