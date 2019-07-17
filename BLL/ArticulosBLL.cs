@@ -10,63 +10,47 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-  public  class ClientesBLL
+  public  class ArticulosBLL
     {
-        public static bool Guardar(Clientes clientes)
+        public static bool Guardar(Articulos articulos)
         {
             bool estado = false;
             Contexto contexto = new Contexto();
+
             try
             {
-                if (contexto.clientes.Add(clientes) != null)
+
+                if (contexto.articulos.Add(articulos) != null)
                 {
                     contexto.SaveChanges();
                     estado = true;
                 }
-
                 contexto.Dispose();
+
             }
             catch (Exception)
             {
                 throw;
             }
+
             return estado;
         }
 
-
-        public static bool Modificar(Clientes clientes)
-        {
-            bool estado = false;
-            Contexto contexto = new Contexto();
-            try
-            {
-                contexto.Entry(clientes).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    estado = true;
-                }
-                contexto.Dispose();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return estado;
-        }
 
 
         public static bool Eliminar(int id)
         {
+
             bool estado = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                Clientes clientes = contexto.clientes.Find(id);
+                Articulos articulos = contexto.articulos.Find(id);
 
-                if (clientes != null)
+                if (articulos != null)
                 {
-                    contexto.Entry(clientes).State = EntityState.Deleted;
+                    contexto.Entry(articulos).State = EntityState.Deleted;
                 }
                 if (contexto.SaveChanges() > 0)
                 {
@@ -85,49 +69,97 @@ namespace BLL
         }
 
 
-        public static Clientes Buscar(int id)
+
+        public static bool Modificar(Articulos articulos)
         {
+
+            bool estado = false;
             Contexto contexto = new Contexto();
-            Clientes clientes = new Clientes();
+
             try
             {
-                clientes = contexto.clientes.Find(id);
+                contexto.Entry(articulos).State = EntityState.Modified;
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    estado = true;
+                }
+                contexto.Dispose();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return estado;
+        }
+
+
+
+        public static Articulos Buscar(int id)
+        {
+
+            Articulos articulos = new Articulos();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                articulos = contexto.articulos.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
             {
-
                 throw;
             }
-            return clientes;
+            return articulos;
+
         }
 
 
-        public static List<Clientes> GetList(Expression<Func<Clientes, bool>> expression)
+
+        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
         {
-            List<Clientes> clientes = new List<Clientes>();
+            List<Articulos> articulos = new List<Articulos>();
             Contexto contexto = new Contexto();
+
             try
             {
-                clientes = contexto.clientes.Where(expression).ToList();
+                articulos = contexto.articulos.Where(expression).ToList();
                 contexto.Dispose();
+
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-            return clientes;
+            return articulos;
         }
 
-        public static List<Clientes> GetList(int ClienteId)
+        public static decimal CalcularCosto(decimal Ganancia, decimal precio)
         {
-            List<Clientes> list = new List<Clientes>();
-            Contexto db = new Contexto();
-            list = db.clientes.Where(p => p.ClienteId == ClienteId).ToList();
-            return list;
+
+            Ganancia /= 100;
+
+            return Convert.ToDecimal(precio) * Convert.ToDecimal(Ganancia);
+
         }
+
+        public static decimal CalcularGanancia(decimal Costo, decimal Precio)
+        {
+            decimal p = Precio - Costo;
+
+            return (Convert.ToDecimal(p) / Convert.ToDecimal(Costo)) * 100;
+
+        }
+
+        public static decimal CalcularPrecio(decimal Costo, decimal Ganancia)
+        {
+
+            Ganancia /= 100;
+            Ganancia *= Costo;
+            return Convert.ToDecimal(Costo) + Convert.ToDecimal(Ganancia);
+        }
+
     }
 }
-
