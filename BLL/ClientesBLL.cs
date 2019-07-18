@@ -15,28 +15,25 @@ namespace BLL
         public static bool Guardar(Clientes clientes)
         {
             bool estado = false;
-            Contexto contexto = new Contexto();
             try
             {
-                if (contexto.clientes.Add(clientes) != null)
-                {
-                    contexto.SaveChanges();
-                    estado = true;
-                }
+                Contexto context = new Contexto();
+                context.clientes.Add(clientes);
+                context.SaveChanges();
+                estado = true;
 
-                contexto.Dispose();
             }
             catch (Exception)
             {
+
                 throw;
             }
             return estado;
         }
-
-
         public static bool Modificar(Clientes clientes)
         {
             bool estado = false;
+
             Contexto contexto = new Contexto();
             try
             {
@@ -54,37 +51,30 @@ namespace BLL
             return estado;
         }
 
-
         public static bool Eliminar(int id)
         {
             bool estado = false;
-            Contexto contexto = new Contexto();
 
+            Contexto contexto = new Contexto();
             try
             {
                 Clientes clientes = contexto.clientes.Find(id);
 
-                if (clientes != null)
-                {
-                    contexto.Entry(clientes).State = EntityState.Deleted;
-                }
+                contexto.clientes.Remove(clientes);
+
                 if (contexto.SaveChanges() > 0)
                 {
                     estado = true;
-                    contexto.Dispose();
-
                 }
-
+                contexto.Dispose();
             }
             catch (Exception)
             {
+
                 throw;
             }
-
             return estado;
         }
-
-
         public static Clientes Buscar(int id)
         {
             Contexto contexto = new Contexto();
@@ -101,12 +91,11 @@ namespace BLL
             }
             return clientes;
         }
-
-
         public static List<Clientes> GetList(Expression<Func<Clientes, bool>> expression)
         {
             List<Clientes> clientes = new List<Clientes>();
             Contexto contexto = new Contexto();
+
             try
             {
                 clientes = contexto.clientes.Where(expression).ToList();
@@ -114,20 +103,10 @@ namespace BLL
             }
             catch (Exception)
             {
-
                 throw;
             }
 
             return clientes;
         }
-
-        public static List<Clientes> GetList(int ClienteId)
-        {
-            List<Clientes> list = new List<Clientes>();
-            Contexto db = new Contexto();
-            list = db.clientes.Where(p => p.ClienteId == ClienteId).ToList();
-            return list;
-        }
     }
 }
-

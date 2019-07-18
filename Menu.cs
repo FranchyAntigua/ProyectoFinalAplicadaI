@@ -39,15 +39,29 @@ namespace ProyectoFinalAplicadaI
         {
             new cUsuarios().ShowDialog();
         }
-
-        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rClientes rus = new rClientes()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
+
+        private void ArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rArticulo rus = new rArticulo()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
         }
     }
 }

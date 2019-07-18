@@ -73,6 +73,24 @@
     <Compile Include="UI\Consultas\cUsuarios.Designer.cs">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rArticulo.Designer.cs">
+      <DependentUpon>rArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rClientes.Designer.cs">
+      <DependentUpon>rClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaArticulos.Designer.cs">
+      <DependentUpon>rEntradaArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +124,15 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rArticulo.resx">
+      <DependentUpon>rArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rClientes.resx">
+      <DependentUpon>rClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEntradaArticulos.resx">
+      <DependentUpon>rEntradaArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
@@ -167,6 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FA TODO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo con fondo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
