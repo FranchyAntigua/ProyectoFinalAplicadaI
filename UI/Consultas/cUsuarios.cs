@@ -24,9 +24,9 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             FiltroComboBox.SelectedIndex = 0;
         }
          Expression<Func<Usuarios, bool>> filtro = a => true;
+
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-           
             int id;
             if (FiltroComboBox.SelectedIndex == 1)
             {
@@ -40,9 +40,18 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 {
                     case 0://Todo.
                         break;
-                    case 1://Filtrando por ID 
+                    case 1://UsuarioId.
                         id = Convert.ToInt32(CriterioTextBox.Text);
-                        filtro = a => a.UsuarioId == id;
+                        filtro = f => f.UsuarioId == id;
+                        break;
+                    case 2://FechaIngreso.
+                        filtro = f => f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
+                        break;
+                    case 3://Usuario.
+                        filtro = f => f.Usuario.ToString().Contains(CriterioTextBox.Text);
+                        break;
+                    case 4://Nombre.
+                        filtro = f => f.Nombre.ToString().Contains(CriterioTextBox.Text) && f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
                         break;
                 }
 
@@ -50,6 +59,41 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
             listaUsuarios = UsuariosBLL.GetList(filtro);
             UsuariosConsultaDataGridView.DataSource = listaUsuarios;
+        }
+        private List<Usuarios> BuscarRangoFecha()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            Expression<Func<Usuarios, bool>> filtro = f => true;
+            int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
+            if (FiltroComboBox.SelectedIndex != 0 && FiltroComboBox.SelectedIndex != 2)
+            {
+                CriterioTextBox.ReadOnly = false;
+                if (String.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                {
+                    MyErrorProvider.SetError(CriterioTextBox, "No puede estar vacio");
+                }
+            }
+            switch (id)
+            {
+                case 0://Todo.
+                    filtro = f => f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
+                    break;
+                case 1://UsuarioId.
+                    id = Convert.ToInt32(CriterioTextBox.Text);
+                    filtro = f => f.UsuarioId == id && (f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date);
+                    break;
+                case 2://Fecha.
+                    filtro = f => f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
+                    break;
+                case 3://Nombres.
+                    filtro = f => f.Nombre.ToString().Contains(CriterioTextBox.Text) && f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
+                    break;
+                case 4://Usuario.
+                    filtro = f => f.Usuario.ToString().Contains(CriterioTextBox.Text) && (f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date);
+                    break;
+            }
+            lista = UsuariosBLL.GetList(filtro);
+            return lista;
         }
 
         private void ImprimirButton_Click_1(object sender, EventArgs e)
@@ -65,16 +109,17 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 rReporte.Visualizar("CrpUsuarios");
             }
         }
-
-        private void FiltroComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (FiltroComboBox.SelectedIndex == 1)
             {
                 CriterioTextBox.ReadOnly = false;
             }
         }
-        private void CriterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void CriterioTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+
             if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
@@ -102,6 +147,8 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-     }
-   }
+
+    }
+}
+ 
 

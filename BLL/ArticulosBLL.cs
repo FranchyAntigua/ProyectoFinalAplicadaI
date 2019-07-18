@@ -35,9 +35,6 @@ namespace BLL
 
             return estado;
         }
-
-
-
         public static bool Eliminar(int id)
         {
 
@@ -68,8 +65,6 @@ namespace BLL
             return estado;
         }
 
-
-
         public static bool Modificar(Articulos articulos)
         {
 
@@ -95,8 +90,6 @@ namespace BLL
             return estado;
         }
 
-
-
         public static Articulos Buscar(int id)
         {
 
@@ -115,8 +108,6 @@ namespace BLL
             return articulos;
 
         }
-
-
 
         public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
         {
