@@ -15,6 +15,7 @@ namespace BLL
         public static bool Guardar(Articulos articulos)
         {
             bool estado = false;
+
             Contexto contexto = new Contexto();
 
             try
@@ -52,10 +53,8 @@ namespace BLL
                 if (contexto.SaveChanges() > 0)
                 {
                     estado = true;
-                    contexto.Dispose();
-
                 }
-
+                contexto.Dispose();
             }
             catch (Exception)
             {

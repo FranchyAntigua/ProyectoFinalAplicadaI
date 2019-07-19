@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAplicadaI.UI.Registros
 {
-    public partial class rArticulo : Form
+    public partial class rArticulos : Form
     {
-        public rArticulo()
+        public rArticulos()
         {
             InitializeComponent();
         }

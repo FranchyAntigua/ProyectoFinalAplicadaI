@@ -56,7 +56,17 @@ namespace ProyectoFinalAplicadaI
 
         private void ArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rArticulo rus = new rArticulo()
+            rArticulos rus = new rArticulos()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
+
+        private void ClientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cClientes rus = new cClientes()
             {
                 MdiParent = this
             };

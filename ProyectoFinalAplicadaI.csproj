@@ -91,11 +91,11 @@
     <Compile Include="UI\Consultas\cUsuarios.Designer.cs">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rArticulo.cs">
+    <Compile Include="UI\Registros\rArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rArticulo.Designer.cs">
-      <DependentUpon>rArticulo.cs</DependentUpon>
+      <DependentUpon>rArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rClientes.cs">
       <SubType>Form</SubType>
@@ -153,7 +153,7 @@
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rArticulo.resx">
-      <DependentUpon>rArticulo.cs</DependentUpon>
+      <DependentUpon>rArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>

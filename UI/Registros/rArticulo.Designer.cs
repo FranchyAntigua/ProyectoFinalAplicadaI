@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalAplicadaI.UI.Registros
 {
-    partial class rArticulo
+    partial class rArticulos
     {
         /// <summary>
         /// Required designer variable.

@@ -49,11 +49,9 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.IdErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.OtroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IdErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OtroErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // FechadateTimePicker
@@ -237,13 +235,9 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // IdErrorProvider
+            // MyErrorProvider
             // 
-            this.IdErrorProvider.ContainerControl = this;
-            // 
-            // OtroErrorProvider
-            // 
-            this.OtroErrorProvider.ContainerControl = this;
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rClientes
             // 
@@ -275,8 +269,7 @@
             this.Name = "rClientes";
             this.Text = "Registro De Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IdErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OtroErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,7 +296,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.ErrorProvider IdErrorProvider;
-        private System.Windows.Forms.ErrorProvider OtroErrorProvider;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
