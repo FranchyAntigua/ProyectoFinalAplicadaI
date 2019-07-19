@@ -126,10 +126,11 @@
             // RangoFechaCheckBox
             // 
             this.RangoFechaCheckBox.AutoSize = true;
+            this.RangoFechaCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RangoFechaCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.RangoFechaCheckBox.Location = new System.Drawing.Point(500, 56);
+            this.RangoFechaCheckBox.Location = new System.Drawing.Point(511, 55);
             this.RangoFechaCheckBox.Name = "RangoFechaCheckBox";
-            this.RangoFechaCheckBox.Size = new System.Drawing.Size(106, 17);
+            this.RangoFechaCheckBox.Size = new System.Drawing.Size(120, 17);
             this.RangoFechaCheckBox.TabIndex = 74;
             this.RangoFechaCheckBox.Text = "Rango de Fecha";
             this.RangoFechaCheckBox.UseVisualStyleBackColor = true;
@@ -138,7 +139,7 @@
             // 
             this.FechaHastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaHastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaHastaDateTimePicker.Location = new System.Drawing.Point(500, 30);
+            this.FechaHastaDateTimePicker.Location = new System.Drawing.Point(511, 29);
             this.FechaHastaDateTimePicker.Name = "FechaHastaDateTimePicker";
             this.FechaHastaDateTimePicker.Size = new System.Drawing.Size(105, 20);
             this.FechaHastaDateTimePicker.TabIndex = 73;
@@ -147,7 +148,7 @@
             // 
             this.FechaDesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDesdeDateTimePicker.Location = new System.Drawing.Point(500, 8);
+            this.FechaDesdeDateTimePicker.Location = new System.Drawing.Point(511, 7);
             this.FechaDesdeDateTimePicker.Name = "FechaDesdeDateTimePicker";
             this.FechaDesdeDateTimePicker.Size = new System.Drawing.Size(105, 20);
             this.FechaDesdeDateTimePicker.TabIndex = 72;
@@ -155,20 +156,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(462, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 71;
             this.label4.Text = "Desde";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(462, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 70;
             this.label3.Text = "Hasta";
             // 
@@ -176,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 262);
+            this.ClientSize = new System.Drawing.Size(628, 262);
             this.Controls.Add(this.RangoFechaCheckBox);
             this.Controls.Add(this.FechaHastaDateTimePicker);
             this.Controls.Add(this.FechaDesdeDateTimePicker);

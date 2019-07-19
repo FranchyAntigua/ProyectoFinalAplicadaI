@@ -73,5 +73,35 @@ namespace ProyectoFinalAplicadaI
 
             rus.Show();
         }
+
+        private void ArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             cArticulos rus = new cArticulos()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
+
+        private void EntradaArticulosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cEntradaArticulos rus = new cEntradaArticulos()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
+
+        private void EntradaArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradaArticulos rus = new rEntradaArticulos()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
     }
 }
