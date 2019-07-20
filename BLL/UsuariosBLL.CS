@@ -114,5 +114,21 @@ namespace BLL
 
             return usuario;
         }
+
+        public static List<Usuarios> GetListUsuario(string aux)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            Contexto db = new Contexto();
+            lista = db.Usuarios.Where(p => p.Usuario == aux).ToList();
+            return lista;
+        }
+
+        public static List<Usuarios> GetContrasena(string aux)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            Contexto db = new Contexto();
+            lista = db.Usuarios.Where(p => p.Contrasena == aux).ToList();
+            return lista;
+        }
     }
 }

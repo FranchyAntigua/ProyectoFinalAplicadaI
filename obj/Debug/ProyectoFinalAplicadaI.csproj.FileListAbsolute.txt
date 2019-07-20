@@ -50,3 +50,4 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicad
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.csproj.CopyComplete
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.exe
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.pdb
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.Login.resources

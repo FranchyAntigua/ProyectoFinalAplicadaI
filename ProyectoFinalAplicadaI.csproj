@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="UI\Reportes\rReporteUsuario.Designer.cs">
       <DependentUpon>rReporteUsuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo con fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-accede-redondeado-derecho-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

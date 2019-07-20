@@ -28,6 +28,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             usuario.UsuarioId = Convert.ToInt32(IdNumericUpDown.Value);
             usuario.FechaIngreso = FechaIngresoDateTimePicker.Value;
             usuario.Nombre = NombretextBox.Text;
+            usuario.Email = EmailtextBox.Text;
 
             if (NivelUsuarioComboBox.SelectedIndex == 0)
                 nivelusu = 1;
@@ -47,6 +48,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             IdNumericUpDown.Value = 0;
             FechaIngresoDateTimePicker.Value = DateTime.Now;
             NombretextBox.Clear();
+            EmailtextBox.Clear();
             UsuariotextBox.Clear();
             ContraseñatextBox.Clear();
             ConfirmarTextBox.Clear();

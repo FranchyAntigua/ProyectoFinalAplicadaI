@@ -73,6 +73,16 @@ namespace ProyectoFinalAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_accede_redondeado_derecho_26 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-accede-redondeado-derecho-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_búsqueda_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-búsqueda-24", resourceCulture);
