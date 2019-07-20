@@ -36,7 +36,13 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\bin\Debug\DAL.dll.config
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.csprojAssemblyReference.cache
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.Menu.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.Properties.Resources.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cArticulos.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cClientes.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cEntradaArticulos.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cUsuarios.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rArticulos.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rClientes.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rEntradaArticulos.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rUsuarios.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Reportes.rReporteUsuario.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.csproj.GenerateResource.cache
@@ -44,9 +50,3 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicad
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.csproj.CopyComplete
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.exe
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.pdb
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rClientes.resources
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rEntradaArticulos.resources
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cArticulos.resources
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cClientes.resources
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Consultas.cEntradaArticulos.resources
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rArticulos.resources

@@ -16,27 +16,28 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
-        List<Usuarios> listaUsuarios = new List<Usuarios>();
+        
         public cUsuarios()
         {
             InitializeComponent();
             CriterioTextBox.ReadOnly = true;
             FiltroComboBox.SelectedIndex = 0;
         }
-         Expression<Func<Usuarios, bool>> filtro = a => true;
-
-        private void ButtonBuscar_Click(object sender, EventArgs e)
+        private List<Usuarios> Buscar()
         {
-            int id;
+            List<Usuarios> listaUsuarios = new List<Usuarios>();
+            Expression<Func<Usuarios, bool>> filtro = a => true;
+            int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
+
             if (FiltroComboBox.SelectedIndex == 1)
             {
                 CriterioTextBox.ReadOnly = false;
                 if (String.IsNullOrWhiteSpace(CriterioTextBox.Text))
                 {
                     MyErrorProvider.SetError(CriterioTextBox, "No puede estar vacio");
-                    return;
+                    // return;
                 }
-                switch (FiltroComboBox.SelectedIndex)
+                switch (id)
                 {
                     case 0://Todo.
                         break;
@@ -59,6 +60,18 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
             listaUsuarios = UsuariosBLL.GetList(filtro);
             UsuariosConsultaDataGridView.DataSource = listaUsuarios;
+            return listaUsuarios;
+        }
+
+        
+
+        private void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+
+            if (RangoFechaCheckBox.Checked == true)
+                UsuariosConsultaDataGridView.DataSource = BuscarRangoFecha();
+            else
+                UsuariosConsultaDataGridView.DataSource = Buscar();
         }
         private List<Usuarios> BuscarRangoFecha()
         {
@@ -96,19 +109,19 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             return lista;
         }
 
-        private void ImprimirButton_Click_1(object sender, EventArgs e)
-        {
-            if (listaUsuarios.Count == 0)
-            {
-                MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
-                rReporte.Visualizar("CrpUsuarios");
-            }
-        }
+        //private void ImprimirButton_Click_1(object sender, EventArgs e)
+        //{
+        //    if (listaUsuarios.Count == 0)
+        //    {
+        //        MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
+        //        rReporte.Visualizar("CrpUsuarios");
+        //    }
+        //}
         private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (FiltroComboBox.SelectedIndex == 1)
