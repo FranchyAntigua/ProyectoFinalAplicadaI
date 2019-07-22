@@ -65,4 +65,8 @@ namespace Test.BLL
             Assert.AreEqual(true, estado);
         }
     }
+
+    internal class ClientesBLL<T>
+    {
+    }
 }

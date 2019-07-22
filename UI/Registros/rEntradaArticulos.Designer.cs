@@ -39,11 +39,10 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.ArticulosIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ArticuloComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArticulosIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -80,9 +79,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 15);
+            this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 17;
-            this.label3.Text = "ArticuloId ";
+            this.label3.Text = "Articulo";
             // 
             // label2
             // 
@@ -148,13 +147,6 @@
             this.Buscarbutton.UseVisualStyleBackColor = false;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // ArticulosIdNumericUpDown
-            // 
-            this.ArticulosIdNumericUpDown.Location = new System.Drawing.Point(101, 96);
-            this.ArticulosIdNumericUpDown.Name = "ArticulosIdNumericUpDown";
-            this.ArticulosIdNumericUpDown.Size = new System.Drawing.Size(84, 20);
-            this.ArticulosIdNumericUpDown.TabIndex = 147;
-            // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
@@ -166,14 +158,23 @@
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(84, 20);
             this.CantidadNumericUpDown.TabIndex = 148;
             // 
+            // ArticuloComboBox
+            // 
+            this.ArticuloComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ArticuloComboBox.FormattingEnabled = true;
+            this.ArticuloComboBox.Location = new System.Drawing.Point(101, 95);
+            this.ArticuloComboBox.Name = "ArticuloComboBox";
+            this.ArticuloComboBox.Size = new System.Drawing.Size(189, 21);
+            this.ArticuloComboBox.TabIndex = 149;
+            // 
             // rEntradaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(302, 245);
+            this.Controls.Add(this.ArticuloComboBox);
             this.Controls.Add(this.CantidadNumericUpDown);
-            this.Controls.Add(this.ArticulosIdNumericUpDown);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.Nuevobutton);
@@ -187,7 +188,6 @@
             this.Name = "rEntradaArticulos";
             this.Text = "rEntradaArticulos";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArticulosIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -206,8 +206,8 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.NumericUpDown ArticulosIdNumericUpDown;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
+        private System.Windows.Forms.ComboBox ArticuloComboBox;
     }
 }

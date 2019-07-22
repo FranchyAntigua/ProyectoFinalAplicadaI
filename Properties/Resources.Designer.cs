@@ -63,6 +63,16 @@ namespace ProyectoFinalAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_40971 {
+            get {
+                object obj = ResourceManager.GetObject("Add_40971", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FA_TODO {
             get {
                 object obj = ResourceManager.GetObject("FA TODO", resourceCulture);
@@ -156,6 +166,16 @@ namespace ProyectoFinalAplicadaI.Properties {
         internal static System.Drawing.Bitmap Printer_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Printer-32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Remove_40970 {
+            get {
+                object obj = ResourceManager.GetObject("Remove_40970", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

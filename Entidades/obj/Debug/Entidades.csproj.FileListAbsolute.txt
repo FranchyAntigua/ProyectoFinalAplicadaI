@@ -5,7 +5,6 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\bin\Debug\EntityFram
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\bin\Debug\EntityFramework.xml
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.dll

@@ -56,7 +56,7 @@ namespace ProyectoFinalAplicadaI
 
         private void ArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rArticulos rus = new rArticulos()
+            rArticulo rus = new rArticulo()
             {
                 MdiParent = this
             };

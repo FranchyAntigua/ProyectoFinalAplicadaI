@@ -35,6 +35,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             else
                 nivelusu = 2;
 
+            usuario.NivelUsuario = nivelusu;
             usuario.Usuario = UsuariotextBox.Text;
             usuario.Contrasena = ContraseñatextBox.Text;
             usuario.Confirmar = ConfirmarTextBox.Text;

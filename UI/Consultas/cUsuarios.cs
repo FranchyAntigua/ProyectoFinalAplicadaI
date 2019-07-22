@@ -16,7 +16,8 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
-
+       private List<Usuarios> lista = new List<Usuarios>();
+        Expression<Func<Usuarios, bool>> filtro = f => true;
         public cUsuarios()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         private List<Usuarios> Buscar()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
-            Expression<Func<Usuarios, bool>> filtro = f => true;
+            //Expression<Func<Usuarios, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
 
             if (FiltroComboBox.SelectedIndex == 1)
@@ -90,7 +91,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         }
         private List<Usuarios> BuscarRangoFecha()
         {
-            List<Usuarios> lista = new List<Usuarios>();
+            
             Expression<Func<Usuarios, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
             if (FiltroComboBox.SelectedIndex != 0 && FiltroComboBox.SelectedIndex != 2)
@@ -185,6 +186,20 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             if (CriterioTextBox.Text != "")
             {
                 MyErrorProvider.Clear();
+            }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            if(lista.Count == 0)
+            {
+                MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
+                rReporte.Visualizar("CrpUsuarios");
             }
         }
     }

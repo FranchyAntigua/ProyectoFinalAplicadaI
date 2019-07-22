@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalAplicadaI.UI.Registros
 {
-    partial class rArticulos
+    partial class rArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -45,11 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -67,6 +67,11 @@
             // PrecionumericUpDown
             // 
             this.PrecionumericUpDown.Location = new System.Drawing.Point(110, 176);
+            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(82, 20);
             this.PrecionumericUpDown.TabIndex = 37;
@@ -74,6 +79,11 @@
             // CostonumericUpDown
             // 
             this.CostonumericUpDown.Location = new System.Drawing.Point(110, 134);
+            this.CostonumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(82, 20);
             this.CostonumericUpDown.TabIndex = 36;
@@ -89,7 +99,8 @@
             // 
             this.InventariotextBox.Location = new System.Drawing.Point(109, 249);
             this.InventariotextBox.Name = "InventariotextBox";
-            this.InventariotextBox.Size = new System.Drawing.Size(202, 20);
+            this.InventariotextBox.ReadOnly = true;
+            this.InventariotextBox.Size = new System.Drawing.Size(83, 20);
             this.InventariotextBox.TabIndex = 30;
             // 
             // DescripciontextBox
@@ -180,7 +191,7 @@
             // 
             this.ITBIStextBox.Location = new System.Drawing.Point(109, 291);
             this.ITBIStextBox.Name = "ITBIStextBox";
-            this.ITBIStextBox.Size = new System.Drawing.Size(202, 20);
+            this.ITBIStextBox.Size = new System.Drawing.Size(83, 20);
             this.ITBIStextBox.TabIndex = 42;
             // 
             // label8
@@ -192,6 +203,10 @@
             this.label8.Size = new System.Drawing.Size(41, 15);
             this.label8.TabIndex = 41;
             this.label8.Text = "ITBIS";
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // Buscarbutton
             // 
@@ -237,11 +252,7 @@
             this.Guardarbutton.UseVisualStyleBackColor = false;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // MyErrorProvider
-            // 
-            this.MyErrorProvider.ContainerControl = this;
-            // 
-            // rArticulo
+            // rArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +279,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "rArticulo";
+            this.Name = "rArticulos";
             this.Text = "Registro De Articulos";
             ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();

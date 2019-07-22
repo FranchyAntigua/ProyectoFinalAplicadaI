@@ -10,7 +10,7 @@ namespace Entidades
  public   class Articulos
     {
         [Key]
-        public int ArticulosId { get; set; }
+        public int ArticuloId { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal Costo { get; set; }
@@ -21,7 +21,7 @@ namespace Entidades
 
         public Articulos()
         {
-            this.ArticulosId = 0;
+            this.ArticuloId = 0;
             this.Nombre = string.Empty;
             this.Descripcion = string.Empty;
             this.Costo = 0;

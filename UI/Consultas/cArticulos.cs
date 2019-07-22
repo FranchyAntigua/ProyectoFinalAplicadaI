@@ -48,13 +48,13 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     break;
                 case 1://ArticulosId.
                     id = ToInt(CriterioTextBox.Text);
-                    filtro = f => f.ArticulosId == id;
+                    filtro = f => f.ArticuloId == id;
                     break;
                 case 2://Costo.
                     filtro = f => f.Costo.ToString().Contains(CriterioTextBox.Text);
                     break;
                 case 3://ArticulosId.
-                    filtro = f => f.ArticulosId.ToString().Contains(CriterioTextBox.Text);
+                    filtro = f => f.ArticuloId.ToString().Contains(CriterioTextBox.Text);
                     break;
                 case 4://Precio.
                     filtro = f => f.Precio.ToString().Contains(CriterioTextBox.Text);

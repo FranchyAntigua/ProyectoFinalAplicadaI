@@ -97,11 +97,11 @@
     <Compile Include="UI\Consultas\cUsuarios.Designer.cs">
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rArticulos.cs">
+    <Compile Include="UI\Registros\rArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rArticulo.Designer.cs">
-      <DependentUpon>rArticulos.cs</DependentUpon>
+      <DependentUpon>rArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rClientes.cs">
       <SubType>Form</SubType>
@@ -120,6 +120,12 @@
     </Compile>
     <Compile Include="UI\Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rVentas.Designer.cs">
+      <DependentUpon>rVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\CrpUsuarios.cs">
       <AutoGen>True</AutoGen>
@@ -162,7 +168,7 @@
       <DependentUpon>cUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rArticulo.resx">
-      <DependentUpon>rArticulos.cs</DependentUpon>
+      <DependentUpon>rArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rVentas.resx">
+      <DependentUpon>rVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\CrpUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -236,6 +245,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-accede-redondeado-derecho-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_40971.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_40970.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

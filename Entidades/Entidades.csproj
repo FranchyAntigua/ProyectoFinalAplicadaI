@@ -53,6 +53,8 @@
     <Compile Include="EntradaArticulos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
+    <Compile Include="Ventas.cs" />
+    <Compile Include="VentasDetalles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

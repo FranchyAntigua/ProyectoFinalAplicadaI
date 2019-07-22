@@ -44,7 +44,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     filtro = f => f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date;
                     break;
                 case 3://ArticulosId.
-                    filtro = f => f.ArticulosId.ToString().Contains(CriterioTextBox.Text);
+                    filtro = f => f.ArticuloId.ToString().Contains(CriterioTextBox.Text);
                     break;
                 case 4://Cantidad.
                     filtro = f => f.Cantidad.ToString().Contains(CriterioTextBox.Text);
@@ -81,7 +81,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     filtro = f => f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date;
                     break;
                 case 3://EstudianteId.
-                    filtro = f => f.ArticulosId.ToString().Contains(CriterioTextBox.Text) && f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date;
+                    filtro = f => f.ArticuloId.ToString().Contains(CriterioTextBox.Text) && f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date;
                     break;
                 case 4://Cantidad.
                     filtro = f => f.Cantidad.ToString().Contains(CriterioTextBox.Text) && (f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date);

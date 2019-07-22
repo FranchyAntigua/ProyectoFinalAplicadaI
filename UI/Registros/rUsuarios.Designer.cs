@@ -142,9 +142,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 26);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 87;
-            this.label3.Text = "Nivel \r\nUsuario";
+            this.label3.Text = "Nivel \r";
             // 
             // Nombre
             // 
@@ -152,9 +152,9 @@
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre.Location = new System.Drawing.Point(17, 51);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(50, 13);
+            this.Nombre.Size = new System.Drawing.Size(56, 13);
             this.Nombre.TabIndex = 86;
-            this.Nombre.Text = "Nombre";
+            this.Nombre.Text = "Nombres";
             this.Nombre.UseMnemonic = false;
             // 
             // label2

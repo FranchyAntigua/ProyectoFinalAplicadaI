@@ -17,6 +17,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         public rEntradaArticulos()
         {
             InitializeComponent();
+            LlenaComboBox();
         }
         private EntradaArticulos LlenaClase()
         {
@@ -24,16 +25,24 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
             Entrada.EntradaId = Convert.ToInt32(IdNumericUpDown.Value);
             Entrada.Fecha = FechaDateTimePicker.Value;
-            Entrada.ArticulosId = Convert.ToInt32(IdNumericUpDown.Value);
+            Entrada.ArticuloId = Convert.ToInt32(ArticuloComboBox.SelectedValue);
             Entrada.Cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
 
             return Entrada;
+        }
+
+
+        private void LlenaComboBox()
+        {            
+            ArticuloComboBox.DataSource = ArticulosBLL.GetList(c => true);
+            ArticuloComboBox.ValueMember = "ArticuloId";
+            ArticuloComboBox.DisplayMember = "Nombre";
         }
         private void Limpiar()
         {
             IdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
-            ArticulosIdNumericUpDown.Value = 0;
+            ArticuloComboBox.SelectedIndex = 0;
             CantidadNumericUpDown.Value = 0;
             MyErrorProvider.Clear();
         }
@@ -41,26 +50,19 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         {
             bool estado = false;
 
-            if (IdNumericUpDown.Value < 0)
+            if (ArticuloComboBox.Text == "")
             {
-                MyErrorProvider.SetError(IdNumericUpDown,
+                MyErrorProvider.SetError(ArticuloComboBox,
                     "No es un id válido");
                 estado = true;
             }
 
-            if (IdNumericUpDown.Value < 0)
-            {
-                MyErrorProvider.SetError(IdNumericUpDown,
-                    "No puede estar vacio");
-                estado = true;
-            }
-
-            if (CantidadNumericUpDown.Value == 0)
+            if (CantidadNumericUpDown.Value <= 0)
             {
                 MyErrorProvider.SetError(CantidadNumericUpDown,
                     "Debe Llenar La Cantidad");
                 estado = true;
-            }
+            }            
 
             return estado;
         }
@@ -73,6 +75,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             if (Entrada != null)
             {
                 FechaDateTimePicker.Value = Entrada.Fecha;
+                ArticuloComboBox.SelectedItem = Entrada.ArticuloId;
                 CantidadNumericUpDown.Value = Entrada.Cantidad;
             }
             else
