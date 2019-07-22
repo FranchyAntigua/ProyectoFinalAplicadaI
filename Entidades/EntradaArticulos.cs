@@ -13,14 +13,14 @@ namespace Entidades
         public int EntradaId { get; set; }
         public DateTime Fecha { get; set; }
         public int ArticulosId { get; set; }
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
 
         public EntradaArticulos()
         {
             EntradaId = 0;
             Fecha = DateTime.Now;
             ArticulosId = 0;
-            Cantidad = 0;
+            this.Cantidad = 0;
         }
     }
 }

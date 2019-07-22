@@ -56,7 +56,7 @@ namespace BLL
                 if (entrada != null)
                 {
                     Articulos articulos = BLL.ArticulosBLL.Buscar(entrada.ArticulosId);
-                    articulos.Inventario -= entrada.Cantidad;
+                    //articulos.Inventario -= entrada.Cantidad;
                     BLL.ArticulosBLL.Modificar(articulos);
 
                     contexto.Entry(entrada).State = EntityState.Deleted;
@@ -90,11 +90,11 @@ namespace BLL
             {
                 EntradaArticulos ant = BLL.EntradaArticulosBLL.Buscar(entrada.EntradaId);
                 int resta;
-                resta = entrada.Cantidad - ant.Cantidad;
+                //resta = entrada.Cantidad - ant.Cantidad;
 
-                Articulos productos = BLL.ArticulosBLL.Buscar(entrada.ArticulosId);
-                productos.Inventario += resta;
-                BLL.ArticulosBLL.Modificar(productos);
+                //Articulos productos = BLL.ArticulosBLL.Buscar(entrada.ArticulosId);
+                //productos.Inventario += resta;
+                //BLL.ArticulosBLL.Modificar(Articulos);
 
                 contexto.Entry(entrada).State = EntityState.Modified;
 

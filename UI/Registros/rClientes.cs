@@ -27,7 +27,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             cli.Nombres = NombrestextBox.Text;
             cli.Direccion = DirecciontextBox.Text;
             cli.Email = EmailtextBox.Text;
-            cli.Cedula = CedulaTextBox.Text;
+            cli.Cedula = CedulaMaskedTextBox.Text;
             cli.Celular = CelulartextBox.Text;
             cli.Telefono = TelefonoTextBox.Text;
 
@@ -40,7 +40,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             NombrestextBox.Clear();
             DirecciontextBox.Clear();
             EmailtextBox.Clear();
-            CedulaTextBox.Clear();
+            CedulaMaskedTextBox.Clear();
             CelulartextBox.Clear();
             TelefonoTextBox.Clear();
             MyErrorProvider.Clear();
@@ -49,6 +49,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private bool Validar()
         {
             bool estado = false;
+            MyErrorProvider.Clear();
 
             if (IdnumericUpDown.Value < 0)
             {
@@ -71,6 +72,19 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 estado = true;
             }
 
+            if(CedulaMaskedTextBox.Text.Length != 13)//sino tiene 13 no es valido
+            {
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "No es válido");
+                estado = true;
+            }
+
+            if(CedulaMaskedTextBox.Text.Contains(" "))//no acepta vacio
+            {
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "No Puede Contener Espacio");
+                estado = true;
+            }
+
+
             return estado;
         }
 
@@ -83,7 +97,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             {
                 NombrestextBox.Text = cli.Nombres;
                 DirecciontextBox.Text = cli.Direccion;
-                CedulaTextBox.Text = cli.Cedula;
+                CedulaMaskedTextBox.Text = cli.Cedula;
                 EmailtextBox.Text = cli.Email;
                 CelulartextBox.Text = cli.Celular;
                 TelefonoTextBox.Text = cli.Telefono;
@@ -172,7 +186,26 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                     MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        private void CedulaMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
+            if (!e.IsValidInput)
+            {
+                toolTip1.ToolTipTitle = "Cedula Invalida";
+                toolTip1.Show("Ingrese la cedual en el formato de 056-8967547-8", CedulaMaskedTextBox, 0, -20, 5000);
+            }
+
         }
+
+        private void CedulaMaskedTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            toolTip1.Hide(CedulaMaskedTextBox);
+        }
+
+        private void CedulaMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = char.IsWhiteSpace(e.KeyChar);
+        }
+    }
     }
 
 

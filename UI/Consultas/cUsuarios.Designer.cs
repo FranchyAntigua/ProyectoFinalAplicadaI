@@ -60,6 +60,7 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(114, 20);
             this.CriterioTextBox.TabIndex = 26;
+            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
             this.CriterioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CriterioTextBox_KeyPress_1);
             // 
             // label2
@@ -74,6 +75,7 @@
             // 
             // FiltroComboBox
             // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
@@ -110,7 +112,6 @@
             this.ImprimirButton.Size = new System.Drawing.Size(70, 37);
             this.ImprimirButton.TabIndex = 29;
             this.ImprimirButton.UseVisualStyleBackColor = true;
-          //  this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click_1);
             // 
             // buttonBuscar
             // 

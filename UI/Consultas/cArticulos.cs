@@ -18,6 +18,8 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         public cArticulos()
         {
             InitializeComponent();
+            CriterioTextBox.ReadOnly = true;
+            FiltroComboBox.SelectedIndex = 0;
         }
         private List<Articulos> Buscar()
         {
@@ -32,7 +34,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     MyErrorProvider.SetError(CriterioTextBox, "No puede estar vacio");
                 }
             }
-            switch (id)
+            switch (FiltroComboBox.SelectedIndex)
             {
                 case 0://Todo.
                     break;

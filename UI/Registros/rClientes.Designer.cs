@@ -50,6 +50,8 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             // CedulaTextBox
             // 
-            this.CedulaTextBox.Location = new System.Drawing.Point(86, 129);
+            this.CedulaTextBox.Location = new System.Drawing.Point(355, 132);
             this.CedulaTextBox.Name = "CedulaTextBox";
             this.CedulaTextBox.Size = new System.Drawing.Size(197, 20);
             this.CedulaTextBox.TabIndex = 26;
@@ -239,13 +241,25 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // CedulaMaskedTextBox
+            // 
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(86, 129);
+            this.CedulaMaskedTextBox.Mask = "000-0000000-0";
+            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(197, 20);
+            this.CedulaMaskedTextBox.TabIndex = 146;
+            this.CedulaMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.CedulaMaskedTextBox_TypeValidationCompleted);
+            this.CedulaMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaMaskedTextBox_KeyDown);
+            this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
+            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(299, 381);
+            this.ClientSize = new System.Drawing.Size(292, 381);
+            this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
@@ -297,5 +311,7 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

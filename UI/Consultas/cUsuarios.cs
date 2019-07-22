@@ -16,17 +16,26 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
-        
+
         public cUsuarios()
         {
             InitializeComponent();
             CriterioTextBox.ReadOnly = true;
             FiltroComboBox.SelectedIndex = 0;
         }
+
+        public static int ToInt(string valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor, out retorno);
+
+            return retorno;
+        }
+
         private List<Usuarios> Buscar()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
-            Expression<Func<Usuarios, bool>> filtro = a => true;
+            Expression<Func<Usuarios, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
 
             if (FiltroComboBox.SelectedIndex == 1)
@@ -35,14 +44,15 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 if (String.IsNullOrWhiteSpace(CriterioTextBox.Text))
                 {
                     MyErrorProvider.SetError(CriterioTextBox, "No puede estar vacio");
-                    // return;
+
                 }
-                switch (id)
+
+                switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0://Todo.
                         break;
                     case 1://UsuarioId.
-                        id = Convert.ToInt32(CriterioTextBox.Text);
+                        id = ToInt(CriterioTextBox.Text);
                         filtro = f => f.UsuarioId == id;
                         break;
                     case 2://FechaIngreso.
@@ -59,11 +69,16 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             }
 
             listaUsuarios = UsuariosBLL.GetList(filtro);
+
             UsuariosConsultaDataGridView.DataSource = listaUsuarios;
+            UsuariosConsultaDataGridView.Columns["Contrasena"].Visible = false;
+            UsuariosConsultaDataGridView.Columns["Confirmar"].Visible = false;
+
+
             return listaUsuarios;
         }
 
-        
+
 
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
@@ -130,38 +145,52 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             }
         }
 
+
         private void CriterioTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
+            if (FiltroComboBox.SelectedIndex == 1)
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Falló",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (Char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se escribir Letras", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsSeparator(e.KeyChar))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se puede digitar Números", "Falló",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (Char.IsPunctuation(e.KeyChar))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se escribir Letras", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se puede digitar Números", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
+        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CriterioTextBox.Text != "")
+            {
+                MyErrorProvider.Clear();
+            }
+        }
     }
 }
- 
+
 

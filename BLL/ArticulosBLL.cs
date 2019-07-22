@@ -15,41 +15,53 @@ namespace BLL
         public static bool Guardar(Articulos articulos)
         {
             bool estado = false;
-
-            Contexto contexto = new Contexto();
-
             try
             {
+                Contexto context = new Contexto();
+                context.articulos.Add(articulos);
+                context.SaveChanges();
+                estado = true;
 
-                if (contexto.articulos.Add(articulos) != null)
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return estado;
+        }
+        public static bool Modificar(Articulos articulos)
+        {
+            bool estado = false;
+
+            Contexto contexto = new Contexto();
+            try
+            {
+                contexto.Entry(articulos).State = EntityState.Modified;
+                if (contexto.SaveChanges() > 0)
                 {
-                    contexto.SaveChanges();
                     estado = true;
                 }
                 contexto.Dispose();
-
             }
             catch (Exception)
             {
                 throw;
             }
-
             return estado;
         }
+
         public static bool Eliminar(int id)
         {
-
             bool estado = false;
-            Contexto contexto = new Contexto();
 
+            Contexto contexto = new Contexto();
             try
             {
                 Articulos articulos = contexto.articulos.Find(id);
 
-                if (articulos != null)
-                {
-                    contexto.Entry(articulos).State = EntityState.Deleted;
-                }
+                contexto.articulos.Remove(articulos);
+
                 if (contexto.SaveChanges() > 0)
                 {
                     estado = true;
@@ -58,43 +70,15 @@ namespace BLL
             }
             catch (Exception)
             {
+
                 throw;
             }
-
             return estado;
         }
-
-        public static bool Modificar(Articulos articulos)
-        {
-
-            bool estado = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                contexto.Entry(articulos).State = EntityState.Modified;
-
-                if (contexto.SaveChanges() > 0)
-                {
-                    estado = true;
-                }
-                contexto.Dispose();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return estado;
-        }
-
         public static Articulos Buscar(int id)
         {
-
-            Articulos articulos = new Articulos();
             Contexto contexto = new Contexto();
-
+            Articulos articulos = new Articulos();
             try
             {
                 articulos = contexto.articulos.Find(id);
@@ -102,12 +86,11 @@ namespace BLL
             }
             catch (Exception)
             {
+
                 throw;
             }
             return articulos;
-
         }
-
         public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
         {
             List<Articulos> articulos = new List<Articulos>();
@@ -117,12 +100,12 @@ namespace BLL
             {
                 articulos = contexto.articulos.Where(expression).ToList();
                 contexto.Dispose();
-
             }
             catch (Exception)
             {
                 throw;
             }
+
             return articulos;
         }
 

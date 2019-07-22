@@ -28,52 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ProductocomboBox = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.components = new System.ComponentModel.Container();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
+            this.ArticulosIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulosIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // CantidadnumericUpDown
+            // FechaDateTimePicker
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(101, 145);
-            this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(84, 20);
-            this.CantidadnumericUpDown.TabIndex = 26;
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(101, 56);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(191, 20);
+            this.FechaDateTimePicker.TabIndex = 20;
             // 
-            // ProductocomboBox
+            // IdNumericUpDown
             // 
-            this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(101, 95);
-            this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(191, 21);
-            this.ProductocomboBox.TabIndex = 21;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 56);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(191, 20);
-            this.dateTimePicker1.TabIndex = 20;
-            // 
-            // IdnumericUpDown
-            // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(101, 19);
-            this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(84, 20);
-            this.IdnumericUpDown.TabIndex = 19;
+            this.IdNumericUpDown.Location = new System.Drawing.Point(101, 19);
+            this.IdNumericUpDown.Name = "IdNumericUpDown";
+            this.IdNumericUpDown.Size = new System.Drawing.Size(84, 20);
+            this.IdNumericUpDown.TabIndex = 19;
             // 
             // label4
             // 
@@ -124,26 +113,29 @@
             this.EliminarButton.Size = new System.Drawing.Size(72, 55);
             this.EliminarButton.TabIndex = 145;
             this.EliminarButton.UseVisualStyleBackColor = false;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // button2
+            // Nuevobutton
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
-            this.button2.Location = new System.Drawing.Point(15, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 55);
-            this.button2.TabIndex = 144;
-            this.button2.UseVisualStyleBackColor = false;
+            this.Nuevobutton.BackColor = System.Drawing.Color.White;
+            this.Nuevobutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 183);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(74, 55);
+            this.Nuevobutton.TabIndex = 144;
+            this.Nuevobutton.UseVisualStyleBackColor = false;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // button3
+            // Guardarbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
-            this.button3.Location = new System.Drawing.Point(109, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 55);
-            this.button3.TabIndex = 143;
-            this.button3.UseVisualStyleBackColor = false;
+            this.Guardarbutton.BackColor = System.Drawing.Color.White;
+            this.Guardarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
+            this.Guardarbutton.Location = new System.Drawing.Point(109, 183);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(76, 55);
+            this.Guardarbutton.TabIndex = 143;
+            this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -154,6 +146,25 @@
             this.Buscarbutton.Size = new System.Drawing.Size(89, 32);
             this.Buscarbutton.TabIndex = 146;
             this.Buscarbutton.UseVisualStyleBackColor = false;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // ArticulosIdNumericUpDown
+            // 
+            this.ArticulosIdNumericUpDown.Location = new System.Drawing.Point(101, 96);
+            this.ArticulosIdNumericUpDown.Name = "ArticulosIdNumericUpDown";
+            this.ArticulosIdNumericUpDown.Size = new System.Drawing.Size(84, 20);
+            this.ArticulosIdNumericUpDown.TabIndex = 147;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // CantidadNumericUpDown
+            // 
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(101, 140);
+            this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
+            this.CantidadNumericUpDown.Size = new System.Drawing.Size(84, 20);
+            this.CantidadNumericUpDown.TabIndex = 148;
             // 
             // rEntradaArticulos
             // 
@@ -161,40 +172,42 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(302, 245);
+            this.Controls.Add(this.CantidadNumericUpDown);
+            this.Controls.Add(this.ArticulosIdNumericUpDown);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.CantidadnumericUpDown);
-            this.Controls.Add(this.ProductocomboBox);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.IdnumericUpDown);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Guardarbutton);
+            this.Controls.Add(this.FechaDateTimePicker);
+            this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rEntradaArticulos";
             this.Text = "rEntradaArticulos";
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArticulosIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown CantidadnumericUpDown;
-        private System.Windows.Forms.ComboBox ProductocomboBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown IdnumericUpDown;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.NumericUpDown ArticulosIdNumericUpDown;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
     }
 }
