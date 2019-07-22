@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ClienteTest.cs" />
+    <Compile Include="BLL\ArticuloTest.cs" />
     <Compile Include="BLL\UsuariosTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

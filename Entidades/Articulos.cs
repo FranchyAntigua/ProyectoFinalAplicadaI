@@ -17,6 +17,7 @@ namespace Entidades
         public decimal Precio { get; set; }
         public decimal Ganancia { get; set; }
         public decimal Inventario { get; set; }
+        public DateTime Fecha { get; set; }
 
 
         public Articulos()
@@ -28,6 +29,7 @@ namespace Entidades
             this.Ganancia = 0;
             this.Inventario = 0;
             this.Precio = 0;
+            this.Fecha = DateTime.Now;
 
         }
 

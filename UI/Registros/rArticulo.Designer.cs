@@ -50,6 +50,8 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -78,7 +80,7 @@
             // 
             // CostonumericUpDown
             // 
-            this.CostonumericUpDown.Location = new System.Drawing.Point(110, 134);
+            this.CostonumericUpDown.Location = new System.Drawing.Point(110, 143);
             this.CostonumericUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -97,7 +99,7 @@
             // 
             // InventariotextBox
             // 
-            this.InventariotextBox.Location = new System.Drawing.Point(109, 249);
+            this.InventariotextBox.Location = new System.Drawing.Point(110, 255);
             this.InventariotextBox.Name = "InventariotextBox";
             this.InventariotextBox.ReadOnly = true;
             this.InventariotextBox.Size = new System.Drawing.Size(83, 20);
@@ -193,6 +195,7 @@
             this.ITBIStextBox.Name = "ITBIStextBox";
             this.ITBIStextBox.Size = new System.Drawing.Size(83, 20);
             this.ITBIStextBox.TabIndex = 42;
+            this.ITBIStextBox.TextChanged += new System.EventHandler(this.ITBIStextBox_TextChanged);
             // 
             // label8
             // 
@@ -223,7 +226,7 @@
             // 
             this.EliminarButton.BackColor = System.Drawing.Color.White;
             this.EliminarButton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_eliminar_26;
-            this.EliminarButton.Location = new System.Drawing.Point(204, 328);
+            this.EliminarButton.Location = new System.Drawing.Point(204, 366);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 55);
             this.EliminarButton.TabIndex = 145;
@@ -234,7 +237,7 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.Color.White;
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
-            this.Nuevobutton.Location = new System.Drawing.Point(14, 328);
+            this.Nuevobutton.Location = new System.Drawing.Point(14, 366);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(78, 55);
             this.Nuevobutton.TabIndex = 144;
@@ -245,20 +248,41 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.Color.White;
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
-            this.Guardarbutton.Location = new System.Drawing.Point(108, 328);
+            this.Guardarbutton.Location = new System.Drawing.Point(108, 366);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(81, 55);
             this.Guardarbutton.TabIndex = 143;
             this.Guardarbutton.UseVisualStyleBackColor = false;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // rArticulos
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(20, 327);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 147;
+            this.label9.Text = "Fecha ";
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(109, 320);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(84, 20);
+            this.FechaDateTimePicker.TabIndex = 148;
+            // 
+            // rArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(323, 389);
+            this.ClientSize = new System.Drawing.Size(323, 433);
+            this.Controls.Add(this.FechaDateTimePicker);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.Nuevobutton);
@@ -279,7 +303,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "rArticulos";
+            this.Name = "rArticulo";
             this.Text = "Registro De Articulos";
             ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
@@ -314,5 +338,7 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

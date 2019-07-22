@@ -65,6 +65,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             string ss = ConfirmarTextBox.Text;
             int comparacion = 0;
             comparacion = String.Compare(s, ss);
+
             if (comparacion != 0)
             {
                 MyErrorProvider.SetError(ContraseñatextBox, "No coinciden");

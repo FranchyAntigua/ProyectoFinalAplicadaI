@@ -72,13 +72,13 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 estado = true;
             }
 
-            if(CedulaMaskedTextBox.Text.Length != 13)//sino tiene 13 no es valido
+            if (CedulaMaskedTextBox.Text.Length != 13)//sino tiene 13 no es valido
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox, "No es válido");
                 estado = true;
             }
 
-            if(CedulaMaskedTextBox.Text.Contains(" "))//no acepta vacio
+            if (CedulaMaskedTextBox.Text.Contains(" "))//no acepta vacio
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox, "No Puede Contener Espacio");
                 estado = true;
@@ -167,24 +167,24 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-                int id = Convert.ToInt32(IdnumericUpDown.Value);
+            int id = Convert.ToInt32(IdnumericUpDown.Value);
 
             Clientes cli = ClientesBLL.Buscar(id);
 
-                if (cli != null)
+            if (cli != null)
+            {
+                if (ClientesBLL.Eliminar(id))
                 {
-                    if (ClientesBLL.Eliminar(id))
-                    {
-                        MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Limpiar();
-                    }
-
-                    else
-                        MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
+
                 else
-                    MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+                MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         private void CedulaMaskedTextBox_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
@@ -205,8 +205,48 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         {
             e.Handled = char.IsWhiteSpace(e.KeyChar);
         }
+
+        private void CelulartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TelefonoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
-    }
+}
 
 
 

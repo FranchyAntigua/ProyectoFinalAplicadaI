@@ -227,5 +227,9 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 return;
             }
         }
+
+        private void ITBIStextBox_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

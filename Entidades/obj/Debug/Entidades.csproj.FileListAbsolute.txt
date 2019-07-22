@@ -9,3 +9,4 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.dll
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.pdb
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache

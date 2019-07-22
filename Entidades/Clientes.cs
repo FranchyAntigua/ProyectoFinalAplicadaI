@@ -23,7 +23,7 @@ namespace Entidades
 
 
 
-        public Clientes(int Clienteid, string nombre, string cedula, string direccion, string email, string celular, string telefono, DateTime fecha)
+        public Clientes(int Clienteid, string nombre, string cedula, string direccion, string email, string celular, string telefono, DateTime fecha, int UsuarioId)
         {
             this.ClienteId = Clienteid;
             this.Nombres = nombre;

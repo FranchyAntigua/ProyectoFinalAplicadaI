@@ -92,6 +92,7 @@
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(197, 20);
             this.TelefonoTextBox.TabIndex = 24;
+            this.TelefonoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoTextBox_KeyPress);
             // 
             // label6
             // 
@@ -183,6 +184,7 @@
             this.CelulartextBox.Name = "CelulartextBox";
             this.CelulartextBox.Size = new System.Drawing.Size(197, 20);
             this.CelulartextBox.TabIndex = 36;
+            this.CelulartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelulartextBox_KeyPress);
             // 
             // label8
             // 

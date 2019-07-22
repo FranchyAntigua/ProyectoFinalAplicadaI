@@ -108,5 +108,15 @@ namespace ProyectoFinalAplicadaI
         {
             Application.Exit();
         }
+
+        private void VentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVentas rus = new rVentas()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
     }
 }
