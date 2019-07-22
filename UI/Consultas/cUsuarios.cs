@@ -151,9 +151,6 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
             if (FiltroComboBox.SelectedIndex == 1)
             {
-
-
-
                 if (Char.IsDigit(e.KeyChar))
                 {
                     e.Handled = false;

@@ -27,3 +27,20 @@ Telefono varchar(13),
 UsuarioId int
 )
 
+create table Articulos(
+ArticulosId int identity primary key,
+Nombre varchar(50),
+Descripcion varchar(50),
+Costo decimal(8,2),
+Precio decimal(8,2),
+Ganancia decimal(8,2),
+Inventario decimal(8,2),
+)
+
+create table EntradaArticulos(
+EntradaId int identity primary key,
+Fecha datetime,
+ArticulosId int,
+Cantidad decimal (8,2),
+)
+

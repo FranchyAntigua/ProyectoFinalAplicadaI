@@ -21,6 +21,14 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             CriterioTextBox.ReadOnly = true;
             FiltroComboBox.SelectedIndex = 0;
         }
+
+        public static int ToInt(string valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor, out retorno);
+
+            return retorno;
+        }
         private List<Articulos> Buscar()
         {
             List<Articulos> lista = new List<Articulos>();
@@ -39,7 +47,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 case 0://Todo.
                     break;
                 case 1://ArticulosId.
-                    id = Convert.ToInt32(CriterioTextBox.Text);
+                    id = ToInt(CriterioTextBox.Text);
                     filtro = f => f.ArticulosId == id;
                     break;
                 case 2://Costo.
@@ -59,11 +67,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
         private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FiltroComboBox.SelectedIndex == 2)
-            {
-                CriterioTextBox.ReadOnly = true;
-            }
-            else
+            if (FiltroComboBox.SelectedIndex == 1)
             {
                 CriterioTextBox.ReadOnly = false;
             }
@@ -71,38 +75,52 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-                ConsultaDataGridView.DataSource = Buscar();
+            ConsultaDataGridView.DataSource = Buscar();
         }
 
         private void CriterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
+            if (FiltroComboBox.SelectedIndex == 1)
             {
-                e.Handled = false;
+
+
+
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsSeparator(e.KeyChar))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se puede digitar Números", "Falló",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (Char.IsPunctuation(e.KeyChar))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se escribir Letras", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se puede digitar Números", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (Char.IsControl(e.KeyChar))
+        }
+
+        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CriterioTextBox.Text != "")
             {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Falló",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (Char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se escribir Letras", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se puede digitar Números", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyErrorProvider.Clear();
             }
         }
     }
-  }
+}

@@ -112,6 +112,7 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(114, 20);
             this.CriterioTextBox.TabIndex = 61;
+            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
             // 
             // label2
             // 
