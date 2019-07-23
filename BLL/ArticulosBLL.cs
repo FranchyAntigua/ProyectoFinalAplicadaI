@@ -12,7 +12,7 @@ namespace BLL
 {
   public  class ArticulosBLL
     {
-        public static bool Guardar(Articulos articulos)
+        public static bool Guardar(Articulo articulos)
         {
             bool estado = false;
             try
@@ -30,7 +30,7 @@ namespace BLL
             }
             return estado;
         }
-        public static bool Modificar(Articulos articulos)
+        public static bool Modificar(Articulo articulos)
         {
             bool estado = false;
 
@@ -58,7 +58,7 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
-                Articulos articulos = contexto.articulos.Find(id);
+                Articulo articulos = contexto.articulos.Find(id);
 
                 contexto.articulos.Remove(articulos);
 
@@ -75,10 +75,10 @@ namespace BLL
             }
             return estado;
         }
-        public static Articulos Buscar(int id)
+        public static Articulo Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Articulos articulos = new Articulos();
+            Articulo articulos = new Articulo();
             try
             {
                 articulos = contexto.articulos.Find(id);
@@ -91,9 +91,9 @@ namespace BLL
             }
             return articulos;
         }
-        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
+        public static List<Articulo> GetList(Expression<Func<Articulo, bool>> expression)
         {
-            List<Articulos> articulos = new List<Articulos>();
+            List<Articulo> articulos = new List<Articulo>();
             Contexto contexto = new Contexto();
 
             try

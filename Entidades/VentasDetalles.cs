@@ -23,7 +23,7 @@ namespace Entidades
         public virtual Ventas Venta { get; set; }
 
         [ForeignKey("ArticuloId")]
-        public virtual Articulos Articulo { get; set; }
+        public virtual Articulo Articulo { get; set; }
 
         public VentasDetalles()
         {

@@ -77,6 +77,7 @@
             this.PrecioTextBox.ReadOnly = true;
             this.PrecioTextBox.Size = new System.Drawing.Size(64, 20);
             this.PrecioTextBox.TabIndex = 151;
+            this.PrecioTextBox.TextChanged += new System.EventHandler(this.PrecioTextBox_TextChanged);
             // 
             // label3
             // 
@@ -338,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(571, 456);
+            this.ClientSize = new System.Drawing.Size(571, 443);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.label10);

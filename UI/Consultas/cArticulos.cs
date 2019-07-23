@@ -29,10 +29,10 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
             return retorno;
         }
-        private List<Articulos> Buscar()
+        private List<Articulo> Buscar()
         {
-            List<Articulos> lista = new List<Articulos>();
-            Expression<Func<Articulos, bool>> filtro = f => true;
+            List<Articulo> lista = new List<Articulo>();
+            Expression<Func<Articulo, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
             if (FiltroComboBox.SelectedIndex == 1)
             {
@@ -65,10 +65,10 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             return lista;
         }
 
-        private List<Articulos> BuscarRangoFecha()
+        private List<Articulo> BuscarRangoFecha()
         {
-            List<Articulos> lista = new List<Articulos>();
-            Expression<Func<Articulos, bool>> filtro = f => true;
+            List<Articulo> lista = new List<Articulo>();
+            Expression<Func<Articulo, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
             if (FiltroComboBox.SelectedIndex != 0 && FiltroComboBox.SelectedIndex != 2)
             {

@@ -2,65 +2,34 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Entidades;
+using BLL;
 
 namespace Test.BLL
 {
     [TestClass]
     public class ArticuloTest
     {
-        public ArticuloTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
-        public void TestMethod1()
+        public void GuardarTest()
         {
-            //
-            // TODO: Add test logic here
-            //
+            Articulo a = new Articulo();
+            a.ArticuloId= 1;
+            a.Descripcion = "Iphone";
+            a.Costo = 500;
+            a.Precio = 1000;
+            a.Ganancia =1000;
+            a.Inventario = 1;
+            a.Fecha = DateTime.Now;
+
+            ArticulosBLL<Articulo> articulo = new ArticulosBLL<Articulo>();
+            bool estado = false;
+            estado = ArticulosBLL.Guardar(a);
+            Assert.AreEqual(true, estado);
         }
+    }
+
+    internal class ArticulosBLL<T>
+    {
     }
 }

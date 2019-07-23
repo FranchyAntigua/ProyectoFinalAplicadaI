@@ -27,7 +27,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void LlenarComboBox()
         {
             Repositorio<Clientes> Repositorio = new Repositorio<Clientes>();
-            Repositorio<Articulos> RepositorioA = new Repositorio<Articulos>();
+            Repositorio<Articulo> RepositorioA = new Repositorio<Articulo>();
 
             ClienteComboBox.DataSource = Repositorio.GetList(c => true);
             ClienteComboBox.ValueMember = "ClienteId";
@@ -108,8 +108,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void Precio()
         {
-            Repositorio<Articulos> Repositorio = new Repositorio<Articulos>();
-            List<Articulos> ListProductos = Repositorio.GetList(c => c.Descripcion == ArticuloComboBox.Text);
+            Repositorio<Articulo> Repositorio = new Repositorio<Articulo>();
+            List<Articulo> ListProductos = Repositorio.GetList(c => c.Descripcion == ArticuloComboBox.Text);
             foreach (var item in ListProductos)
             {
                 PrecioTextBox.Text = item.Precio.ToString();
@@ -205,38 +205,39 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void AgregarButton_Click(object sender, EventArgs e)
         {
             List<VentasDetalles> detalle = new List<VentasDetalles>();
+            int cantidad = ToInt(CantidadTextBox.Text);
 
             if (VentasGridView.DataSource != null)
             {
                 detalle = (List<VentasDetalles>)VentasGridView.DataSource;
             }
-            else if (CantidadTextBox.Text == "0")
+            else if (cantidad == 0)
             {
                 MessageBox.Show("Cantidad no puede ser cero!!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                detalle.Add(
-                    new VentasDetalles(
-                       id: 0,
-                       ventaId: (int)VentaIdNumericUpDown.Value,
-                       articuloId: (int)ArticuloComboBox.SelectedValue,
-                       descripcion: ArticuloComboBox.Text,
-                       cantidad: ToInt(CantidadTextBox.Text),
-                       precio: (decimal)Convert.ToDecimal(PrecioTextBox.Text),
-                       importe: (decimal)Convert.ToDecimal(ImporteTextBox.Text)
-               ));
 
-                VentasGridView.DataSource = null;
-                VentasGridView.DataSource = detalle;
-                VentasGridView.Columns["Id"].Visible = false;
-                VentasGridView.Columns["VentaId"].Visible = false;
-                VentasGridView.Columns["ArticuloId"].Visible = false;
-                VentasGridView.Columns["Articulo"].Visible = false;
-                VentasGridView.Columns["Venta"].Visible = false;
-                Aumentar();
-            }
+            detalle.Add(
+                new VentasDetalles(
+                   id: 0,
+                   ventaId: (int)VentaIdNumericUpDown.Value,
+                   articuloId: (int)ArticuloComboBox.SelectedValue,
+                   descripcion: ArticuloComboBox.Text,
+                   cantidad: ToInt(CantidadTextBox.Text),
+                   precio: (decimal)Convert.ToDecimal(PrecioTextBox.Text),
+                   importe: (decimal)Convert.ToDecimal(ImporteTextBox.Text)
+           ));
+
+            VentasGridView.DataSource = null;
+            VentasGridView.DataSource = detalle;
+            VentasGridView.Columns["Id"].Visible = false;
+            VentasGridView.Columns["VentaId"].Visible = false;
+            VentasGridView.Columns["ArticuloId"].Visible = false;
+            VentasGridView.Columns["Articulo"].Visible = false;
+            VentasGridView.Columns["Venta"].Visible = false;
+            Aumentar();
+
         }
 
         private void RemoverButton_Click(object sender, EventArgs e)
@@ -357,6 +358,14 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void CantidadTextBox_TextChanged(object sender, EventArgs e)
         {
             CambiarPrecio();
+            int canti = ToInt(CantidadTextBox.Text);
+            decimal pre = ToDecimal(PrecioTextBox.Text);
+            ImporteTextBox.Text = (canti * pre).ToString();
+        }
+
+        private void PrecioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //CambiarPrecio();
             int canti = ToInt(CantidadTextBox.Text);
             decimal pre = ToDecimal(PrecioTextBox.Text);
             ImporteTextBox.Text = (canti * pre).ToString();

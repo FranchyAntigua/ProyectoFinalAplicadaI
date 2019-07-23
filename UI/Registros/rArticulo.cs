@@ -63,9 +63,9 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             MyErrorProvider.Clear();
         }
 
-        private Articulos Llenaclase()
+        private Articulo Llenaclase()
         {
-            Articulos articulos = new Articulos();
+            Articulo articulos = new Articulo();
 
             InventariotextBox.Text = 0.ToString();
             articulos.ArticuloId = Convert.ToInt32(IdnumericUpDown.Value);
@@ -81,7 +81,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Articulos articulos = Llenaclase();
+            Articulo articulos = Llenaclase();
 
 
             if (validar(2))
@@ -128,7 +128,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             else
             {
                 int id = Convert.ToInt32(IdnumericUpDown.Value);
-                Articulos articulos = BLL.ArticulosBLL.Buscar(id);
+                Articulo articulos = BLL.ArticulosBLL.Buscar(id);
 
                 if (articulos != null)
                 {

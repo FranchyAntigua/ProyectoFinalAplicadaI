@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
- public   class Articulos
+ public   class Articulo
     {
         [Key]
         public int ArticuloId { get; set; }
@@ -19,7 +19,7 @@ namespace Entidades
         public DateTime Fecha { get; set; }
 
 
-        public Articulos()
+        public Articulo()
         {
             this.ArticuloId = 0;
             this.Descripcion = string.Empty;

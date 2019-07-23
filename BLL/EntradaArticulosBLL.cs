@@ -22,7 +22,7 @@ namespace BLL
 
                 if (contexto.entrada.Add(entrada) != null)
                 {
-                    Articulos articulos = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
+                    Articulo articulos = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
                     articulos.Inventario += entrada.Cantidad;
                     BLL.ArticulosBLL.Modificar(articulos);
 
@@ -55,7 +55,7 @@ namespace BLL
 
                 if (entrada != null)
                 {
-                    Articulos articulos = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
+                    Articulo articulos = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
                     articulos.Inventario -= entrada.Cantidad;
                     BLL.ArticulosBLL.Modificar(articulos);
 
@@ -91,7 +91,7 @@ namespace BLL
                 EntradaArticulos ant = BLL.EntradaArticulosBLL.Buscar(entrada.EntradaId);
                 decimal resta = entrada.Cantidad - ant.Cantidad;
 
-                Articulos articulo = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
+                Articulo articulo = BLL.ArticulosBLL.Buscar(entrada.ArticuloId);
                 articulo.Inventario += resta;
                 BLL.ArticulosBLL.Modificar(articulo);
 

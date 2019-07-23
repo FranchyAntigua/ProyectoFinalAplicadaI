@@ -1,6 +1,6 @@
-create database PruebaF
+create database PruebaFf
 go
-Use PruebaF
+Use PruebaFf
 go
 create table Usuarios(
 UsuarioId int identity primary key,
