@@ -15,18 +15,24 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
         public decimal Itbis { get; set; }
+        public decimal SubTotal { get; set; }
         public decimal Total { get; set; }
 
-        [ForeignKey("ClienteId")]
-        public virtual Clientes Clientes { get; set; }
-
-        public virtual List<VentasDetalles> Detalles { get; set; }
+        public virtual List<VentasDetalles> Detalle { get; set; }
 
         public Ventas()
         {
-            this.Detalles = new List<VentasDetalles>();
+            this.Detalle = new List<VentasDetalles>();
         }
 
+        public void AgregarDetalle(int Id, int VentaId, int ArticuloId, string Descripcion, int Cantidad, decimal Precio, decimal Importe)
+        {
+            this.Detalle.Add(new VentasDetalles(Id, VentaId, ArticuloId, Descripcion, Cantidad, Precio, Importe));
+        }
 
+        public override string ToString()
+        {
+            return VentaId.ToString();
+        }
     }
 }

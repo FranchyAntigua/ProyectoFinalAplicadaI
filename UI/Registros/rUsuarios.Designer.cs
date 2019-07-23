@@ -61,9 +61,9 @@
             this.NivelUsuarioComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.NivelUsuarioComboBox.Location = new System.Drawing.Point(88, 123);
+            this.NivelUsuarioComboBox.Location = new System.Drawing.Point(82, 123);
             this.NivelUsuarioComboBox.Name = "NivelUsuarioComboBox";
-            this.NivelUsuarioComboBox.Size = new System.Drawing.Size(206, 21);
+            this.NivelUsuarioComboBox.Size = new System.Drawing.Size(265, 21);
             this.NivelUsuarioComboBox.TabIndex = 100;
             // 
             // FechaIngresoDateTimePicker
@@ -87,7 +87,7 @@
             // 
             // IdNumericUpDown
             // 
-            this.IdNumericUpDown.Location = new System.Drawing.Point(88, 15);
+            this.IdNumericUpDown.Location = new System.Drawing.Point(82, 15);
             this.IdNumericUpDown.Name = "IdNumericUpDown";
             this.IdNumericUpDown.Size = new System.Drawing.Size(104, 20);
             this.IdNumericUpDown.TabIndex = 93;
@@ -96,7 +96,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 199);
+            this.label7.Location = new System.Drawing.Point(12, 199);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 92;
@@ -106,7 +106,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 87);
+            this.label6.Location = new System.Drawing.Point(12, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 91;
@@ -114,23 +114,23 @@
             // 
             // ContraseñatextBox
             // 
-            this.ContraseñatextBox.Location = new System.Drawing.Point(88, 199);
+            this.ContraseñatextBox.Location = new System.Drawing.Point(82, 199);
             this.ContraseñatextBox.Name = "ContraseñatextBox";
-            this.ContraseñatextBox.Size = new System.Drawing.Size(206, 20);
+            this.ContraseñatextBox.Size = new System.Drawing.Size(265, 20);
             this.ContraseñatextBox.TabIndex = 90;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(88, 84);
+            this.EmailtextBox.Location = new System.Drawing.Point(82, 84);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(206, 20);
+            this.EmailtextBox.Size = new System.Drawing.Size(265, 20);
             this.EmailtextBox.TabIndex = 89;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 163);
+            this.label4.Location = new System.Drawing.Point(12, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 88;
@@ -140,7 +140,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 126);
+            this.label3.Location = new System.Drawing.Point(12, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 87;
@@ -150,7 +150,7 @@
             // 
             this.Nombre.AutoSize = true;
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(17, 51);
+            this.Nombre.Location = new System.Drawing.Point(12, 51);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(56, 13);
             this.Nombre.TabIndex = 86;
@@ -161,7 +161,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 17);
+            this.label2.Location = new System.Drawing.Point(14, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 85;
@@ -169,16 +169,16 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(88, 160);
+            this.UsuariotextBox.Location = new System.Drawing.Point(82, 160);
             this.UsuariotextBox.Name = "UsuariotextBox";
-            this.UsuariotextBox.Size = new System.Drawing.Size(206, 20);
+            this.UsuariotextBox.Size = new System.Drawing.Size(265, 20);
             this.UsuariotextBox.TabIndex = 84;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(88, 48);
+            this.NombretextBox.Location = new System.Drawing.Point(82, 48);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(206, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(265, 20);
             this.NombretextBox.TabIndex = 83;
             this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretexBox);
             // 
@@ -186,7 +186,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 237);
+            this.label1.Location = new System.Drawing.Point(12, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 102;
@@ -194,9 +194,9 @@
             // 
             // ConfirmarTextBox
             // 
-            this.ConfirmarTextBox.Location = new System.Drawing.Point(88, 230);
+            this.ConfirmarTextBox.Location = new System.Drawing.Point(82, 230);
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
-            this.ConfirmarTextBox.Size = new System.Drawing.Size(206, 20);
+            this.ConfirmarTextBox.Size = new System.Drawing.Size(265, 20);
             this.ConfirmarTextBox.TabIndex = 101;
             // 
             // MyErrorProvider
@@ -207,7 +207,7 @@
             // 
             this.Buscarbutton.BackColor = System.Drawing.Color.White;
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_241;
-            this.Buscarbutton.Location = new System.Drawing.Point(205, 7);
+            this.Buscarbutton.Location = new System.Drawing.Point(199, 7);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(89, 32);
             this.Buscarbutton.TabIndex = 143;
@@ -252,7 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(309, 368);
+            this.ClientSize = new System.Drawing.Size(358, 361);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.button2);

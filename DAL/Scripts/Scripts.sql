@@ -35,6 +35,7 @@ Costo decimal(8,2),
 Precio decimal(8,2),
 Ganancia decimal(8,2),
 Inventario decimal(8,2),
+Fecha datetime,
 )
 
 create table EntradaArticulos(
@@ -44,3 +45,21 @@ ArticuloId int,
 Cantidad decimal (8,2),
 )
 
+create table Ventas(
+VentaId int identity primary key,
+Fecha datetime,
+ClienteId int,
+Itbis decimal,
+SubTotal decimal,
+Total decimal,
+)
+
+create table VentasDetalles(
+Id int identity primary key,
+VentaId int,
+ArticuloId  int,
+Descripcion varchar(50),
+Cantidad int,
+Precio decimal,
+Importe decimal,
+)

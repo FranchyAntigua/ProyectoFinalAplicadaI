@@ -11,7 +11,6 @@ namespace Entidades
     {
         [Key]
         public int ArticuloId { get; set; }
-        public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
@@ -23,7 +22,6 @@ namespace Entidades
         public Articulos()
         {
             this.ArticuloId = 0;
-            this.Nombre = string.Empty;
             this.Descripcion = string.Empty;
             this.Costo = 0;
             this.Ganancia = 0;
@@ -32,10 +30,9 @@ namespace Entidades
             this.Fecha = DateTime.Now;
 
         }
-
         public override string ToString()
         {
-            return this.Nombre;
+            return this.Descripcion;
         }
     }
 }

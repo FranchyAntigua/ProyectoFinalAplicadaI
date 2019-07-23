@@ -63,7 +63,7 @@
             // 
             this.GanancianumericUpDown.Location = new System.Drawing.Point(109, 212);
             this.GanancianumericUpDown.Name = "GanancianumericUpDown";
-            this.GanancianumericUpDown.Size = new System.Drawing.Size(82, 20);
+            this.GanancianumericUpDown.Size = new System.Drawing.Size(115, 20);
             this.GanancianumericUpDown.TabIndex = 38;
             // 
             // PrecionumericUpDown
@@ -75,7 +75,7 @@
             0,
             0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
-            this.PrecionumericUpDown.Size = new System.Drawing.Size(82, 20);
+            this.PrecionumericUpDown.Size = new System.Drawing.Size(114, 20);
             this.PrecionumericUpDown.TabIndex = 37;
             // 
             // CostonumericUpDown
@@ -87,7 +87,7 @@
             0,
             0});
             this.CostonumericUpDown.Name = "CostonumericUpDown";
-            this.CostonumericUpDown.Size = new System.Drawing.Size(82, 20);
+            this.CostonumericUpDown.Size = new System.Drawing.Size(114, 20);
             this.CostonumericUpDown.TabIndex = 36;
             // 
             // IdnumericUpDown
@@ -102,7 +102,7 @@
             this.InventariotextBox.Location = new System.Drawing.Point(110, 255);
             this.InventariotextBox.Name = "InventariotextBox";
             this.InventariotextBox.ReadOnly = true;
-            this.InventariotextBox.Size = new System.Drawing.Size(83, 20);
+            this.InventariotextBox.Size = new System.Drawing.Size(114, 20);
             this.InventariotextBox.TabIndex = 30;
             // 
             // DescripciontextBox
@@ -193,7 +193,7 @@
             // 
             this.ITBIStextBox.Location = new System.Drawing.Point(109, 291);
             this.ITBIStextBox.Name = "ITBIStextBox";
-            this.ITBIStextBox.Size = new System.Drawing.Size(83, 20);
+            this.ITBIStextBox.Size = new System.Drawing.Size(115, 20);
             this.ITBIStextBox.TabIndex = 42;
             this.ITBIStextBox.TextChanged += new System.EventHandler(this.ITBIStextBox_TextChanged);
             // 

@@ -62,14 +62,14 @@
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechadateTimePicker.Location = new System.Drawing.Point(86, 283);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(197, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(105, 20);
             this.FechadateTimePicker.TabIndex = 28;
             // 
             // IdnumericUpDown
             // 
             this.IdnumericUpDown.Location = new System.Drawing.Point(86, 19);
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(77, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(119, 20);
             this.IdnumericUpDown.TabIndex = 27;
             // 
             // CedulaTextBox
@@ -83,14 +83,14 @@
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(86, 92);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(197, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(239, 20);
             this.DirecciontextBox.TabIndex = 25;
             // 
             // TelefonoTextBox
             // 
             this.TelefonoTextBox.Location = new System.Drawing.Point(86, 245);
             this.TelefonoTextBox.Name = "TelefonoTextBox";
-            this.TelefonoTextBox.Size = new System.Drawing.Size(197, 20);
+            this.TelefonoTextBox.Size = new System.Drawing.Size(239, 20);
             this.TelefonoTextBox.TabIndex = 24;
             this.TelefonoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoTextBox_KeyPress);
             // 
@@ -148,7 +148,7 @@
             // 
             this.NombrestextBox.Location = new System.Drawing.Point(86, 54);
             this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(197, 20);
+            this.NombrestextBox.Size = new System.Drawing.Size(239, 20);
             this.NombrestextBox.TabIndex = 18;
             // 
             // label1
@@ -165,7 +165,7 @@
             // 
             this.EmailtextBox.Location = new System.Drawing.Point(86, 167);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(197, 20);
+            this.EmailtextBox.Size = new System.Drawing.Size(239, 20);
             this.EmailtextBox.TabIndex = 34;
             // 
             // label7
@@ -182,7 +182,7 @@
             // 
             this.CelulartextBox.Location = new System.Drawing.Point(86, 202);
             this.CelulartextBox.Name = "CelulartextBox";
-            this.CelulartextBox.Size = new System.Drawing.Size(197, 20);
+            this.CelulartextBox.Size = new System.Drawing.Size(239, 20);
             this.CelulartextBox.TabIndex = 36;
             this.CelulartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelulartextBox_KeyPress);
             // 
@@ -232,9 +232,9 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_24;
-            this.Buscarbutton.Location = new System.Drawing.Point(189, 11);
+            this.Buscarbutton.Location = new System.Drawing.Point(240, 11);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(94, 32);
+            this.Buscarbutton.Size = new System.Drawing.Size(85, 32);
             this.Buscarbutton.TabIndex = 29;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
@@ -248,7 +248,7 @@
             this.CedulaMaskedTextBox.Location = new System.Drawing.Point(86, 129);
             this.CedulaMaskedTextBox.Mask = "000-0000000-0";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
-            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(197, 20);
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(239, 20);
             this.CedulaMaskedTextBox.TabIndex = 146;
             this.CedulaMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.CedulaMaskedTextBox_TypeValidationCompleted);
             this.CedulaMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaMaskedTextBox_KeyDown);
@@ -260,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(292, 381);
+            this.ClientSize = new System.Drawing.Size(335, 381);
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
