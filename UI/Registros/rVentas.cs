@@ -15,8 +15,6 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 {
     public partial class rVentas : Form
     {
-        decimal ITBIS = 0;
-        decimal Total = 0;
         Expression<Func<Ventas, bool>> filtral = x => 1 == 1;
 
         public rVentas()
@@ -263,7 +261,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         {
             Ventas venta;
             bool Paso = false;
-            Repositorio<Ventas> repositorio = new Repositorio<Ventas>();
+            RepositorioVentas repositorio = new RepositorioVentas();
             if (Validar())
             {
                 return;
@@ -280,7 +278,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             else
             {
                 int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
-                Repositorio<Ventas> repository = new Repositorio<Ventas>();
+                RepositorioVentas repository = new RepositorioVentas();
                 Ventas ven = repository.Buscar(id);
 
                 if (ven != null)
@@ -306,7 +304,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
-            Repositorio<Ventas> repository = new Repositorio<Ventas>();
+            RepositorioVentas repository = new RepositorioVentas();
             Ventas ven = repository.Buscar(id);
 
             if (ven != null)
@@ -369,6 +367,21 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             int canti = ToInt(CantidadTextBox.Text);
             decimal pre = ToDecimal(PrecioTextBox.Text);
             ImporteTextBox.Text = (canti * pre).ToString();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
+            RepositorioVentas repositorio = new RepositorioVentas();
+            Ventas ventas = repositorio.Buscar(id);
+
+            if (ventas != null)
+            {
+                LlenaCampos(ventas);
+            }
+            else
+                MessageBox.Show("No se encontró!!!", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -30,6 +30,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             cli.Cedula = CedulaMaskedTextBox.Text;
             cli.Celular = CelulartextBox.Text;
             cli.Telefono = TelefonoTextBox.Text;
+            cli.Deuda = 0;
 
             return cli;
         }
@@ -43,6 +44,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             CedulaMaskedTextBox.Clear();
             CelulartextBox.Clear();
             TelefonoTextBox.Clear();
+            DeudaTextBox.Text = "0";
             MyErrorProvider.Clear();
         }
 
@@ -101,6 +103,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 EmailtextBox.Text = cli.Email;
                 CelulartextBox.Text = cli.Celular;
                 TelefonoTextBox.Text = cli.Telefono;
+                DeudaTextBox.Text = cli.Deuda.ToString();
                 FechadateTimePicker.Value = cli.Fecha;
             }
             else

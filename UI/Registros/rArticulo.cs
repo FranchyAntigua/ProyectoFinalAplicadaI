@@ -70,6 +70,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             InventariotextBox.Text = 0.ToString();
             articulos.ArticuloId = Convert.ToInt32(IdnumericUpDown.Value);
             articulos.Descripcion = DescripciontextBox.Text;
+            articulos.Medida = MedidaComboBox.Text;
             articulos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
             articulos.Ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
             articulos.Precio = Convert.ToDecimal(PrecionumericUpDown.Value);
@@ -134,11 +135,11 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 {
                     IdnumericUpDown.Value = articulos.ArticuloId;
                     DescripciontextBox.Text = articulos.Descripcion;
+                    MedidaComboBox.Text = articulos.Medida;
                     CostonumericUpDown.Value = articulos.Costo;
                     GanancianumericUpDown.Value = articulos.Ganancia;
                     PrecionumericUpDown.Value = articulos.Precio;
                     InventariotextBox.Text = articulos.Inventario.ToString();
-
                 }
                 else
                 {

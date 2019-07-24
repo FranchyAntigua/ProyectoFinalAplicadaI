@@ -1,6 +1,6 @@
-create database PruebaFf
+create database PruebaFfssss
 go
-Use PruebaFf
+Use PruebaFfssss
 go
 create table Usuarios(
 UsuarioId int identity primary key,
@@ -27,7 +27,7 @@ Telefono varchar(13),
 UsuarioId int
 )
 
-create table Articulos(
+create table Articulo(
 ArticuloId int identity primary key,
 Nombre varchar(50),
 Descripcion varchar(50),

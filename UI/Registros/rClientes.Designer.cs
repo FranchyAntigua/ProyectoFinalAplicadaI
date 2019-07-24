@@ -52,6 +52,8 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.DeudaTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -200,7 +202,7 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.Color.White;
             this.Eliminarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_eliminar_26;
-            this.Eliminarbutton.Location = new System.Drawing.Point(204, 318);
+            this.Eliminarbutton.Location = new System.Drawing.Point(220, 343);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(87, 55);
             this.Eliminarbutton.TabIndex = 145;
@@ -211,7 +213,7 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.Color.White;
             this.Nuevobutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.New_File_36861_1_;
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 318);
+            this.Nuevobutton.Location = new System.Drawing.Point(32, 343);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(78, 55);
             this.Nuevobutton.TabIndex = 144;
@@ -222,7 +224,7 @@
             // 
             this.Guardarbutton.BackColor = System.Drawing.Color.White;
             this.Guardarbutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_guardar_48;
-            this.Guardarbutton.Location = new System.Drawing.Point(110, 318);
+            this.Guardarbutton.Location = new System.Drawing.Point(126, 343);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(81, 55);
             this.Guardarbutton.TabIndex = 143;
@@ -254,13 +256,35 @@
             this.CedulaMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaMaskedTextBox_KeyDown);
             this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(237, 277);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 20);
+            this.label9.TabIndex = 147;
+            this.label9.Text = "Deuda";
+            // 
+            // DeudaTextBox
+            // 
+            this.DeudaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeudaTextBox.Location = new System.Drawing.Point(240, 295);
+            this.DeudaTextBox.Multiline = true;
+            this.DeudaTextBox.Name = "DeudaTextBox";
+            this.DeudaTextBox.ReadOnly = true;
+            this.DeudaTextBox.Size = new System.Drawing.Size(83, 34);
+            this.DeudaTextBox.TabIndex = 148;
+            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(335, 381);
+            this.ClientSize = new System.Drawing.Size(335, 413);
+            this.Controls.Add(this.DeudaTextBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -315,5 +339,7 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox DeudaTextBox;
+        private System.Windows.Forms.Label label9;
     }
 }

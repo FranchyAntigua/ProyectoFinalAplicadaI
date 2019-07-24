@@ -12,6 +12,7 @@ namespace Entidades
         [Key]
         public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
+        public string Medida { get; set; }
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
         public decimal Ganancia { get; set; }
@@ -23,6 +24,7 @@ namespace Entidades
         {
             this.ArticuloId = 0;
             this.Descripcion = string.Empty;
+            this.Medida = string.Empty;
             this.Costo = 0;
             this.Ganancia = 0;
             this.Inventario = 0;

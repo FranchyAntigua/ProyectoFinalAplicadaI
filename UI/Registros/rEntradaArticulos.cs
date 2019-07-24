@@ -36,7 +36,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         {            
             ArticuloComboBox.DataSource = ArticulosBLL.GetList(c => true);
             ArticuloComboBox.ValueMember = "ArticuloId";
-            ArticuloComboBox.DisplayMember = "Nombre";
+            ArticuloComboBox.DisplayMember = "Descripcion";
         }
         private void Limpiar()
         {

@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MedidatextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.MedidaComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -109,7 +109,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(109, 67);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(202, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(115, 20);
             this.DescripciontextBox.TabIndex = 29;
             // 
             // label7
@@ -171,13 +171,6 @@
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 21;
             this.label1.Text = "ArticuloId";
-            // 
-            // MedidatextBox
-            // 
-            this.MedidatextBox.Location = new System.Drawing.Point(109, 104);
-            this.MedidatextBox.Name = "MedidatextBox";
-            this.MedidatextBox.Size = new System.Drawing.Size(202, 20);
-            this.MedidatextBox.TabIndex = 40;
             // 
             // label2
             // 
@@ -274,6 +267,18 @@
             this.FechaDateTimePicker.Size = new System.Drawing.Size(84, 20);
             this.FechaDateTimePicker.TabIndex = 148;
             // 
+            // MedidaComboBox
+            // 
+            this.MedidaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MedidaComboBox.FormattingEnabled = true;
+            this.MedidaComboBox.Items.AddRange(new object[] {
+            "Unidad",
+            "Caja"});
+            this.MedidaComboBox.Location = new System.Drawing.Point(108, 99);
+            this.MedidaComboBox.Name = "MedidaComboBox";
+            this.MedidaComboBox.Size = new System.Drawing.Size(116, 21);
+            this.MedidaComboBox.TabIndex = 149;
+            // 
             // rArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +286,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(323, 433);
+            this.Controls.Add(this.MedidaComboBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Buscarbutton);
@@ -289,7 +295,6 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.ITBIStextBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.MedidatextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.GanancianumericUpDown);
             this.Controls.Add(this.PrecionumericUpDown);
@@ -329,7 +334,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox MedidatextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ITBIStextBox;
         private System.Windows.Forms.Label label8;
@@ -340,5 +344,6 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.ComboBox MedidaComboBox;
     }
 }

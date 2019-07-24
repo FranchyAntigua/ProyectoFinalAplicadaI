@@ -19,11 +19,8 @@ namespace Entidades
         public string Celular { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha { get; set; }
-        public int UsuarioId { get; set; }
-
-
-
-        public Clientes(int Clienteid, string nombre, string cedula, string direccion, string email, string celular, string telefono, DateTime fecha, int UsuarioId)
+        public decimal Deuda { get; set; }
+        public Clientes(int Clienteid, string nombre, string cedula, string direccion, string email, string celular, string telefono, DateTime fecha, decimal deuda)
         {
             this.ClienteId = Clienteid;
             this.Nombres = nombre;
@@ -32,7 +29,7 @@ namespace Entidades
             this.Celular = celular;
             this.Telefono = telefono;
             this.Fecha = fecha;
-            this.UsuarioId = UsuarioId;
+            this.Deuda = deuda;
         }
 
         public Clientes()
@@ -41,11 +38,10 @@ namespace Entidades
             this.Nombres = string.Empty;
             this.Cedula = string.Empty;
             this.Email = string.Empty;
-            this.Celular= string.Empty;
+            this.Celular = string.Empty;
             this.Telefono = string.Empty;
             this.Fecha = DateTime.Now;
-            this.UsuarioId = 0;
-
+            this.Deuda = 0;
         }
 
         public override string ToString()

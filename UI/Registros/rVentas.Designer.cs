@@ -224,6 +224,7 @@
             this.BuscarButton.Size = new System.Drawing.Size(75, 32);
             this.BuscarButton.TabIndex = 154;
             this.BuscarButton.UseVisualStyleBackColor = false;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // EliminarButton
             // 
