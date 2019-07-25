@@ -16,6 +16,7 @@ namespace Entidades
         public decimal Costo { get; set; }
         public decimal Precio { get; set; }
         public decimal Ganancia { get; set; }
+        public decimal Itbis { get; set; }
         public decimal Inventario { get; set; }
         public DateTime Fecha { get; set; }
 
@@ -27,6 +28,7 @@ namespace Entidades
             this.Medida = string.Empty;
             this.Costo = 0;
             this.Ganancia = 0;
+            this.Itbis = 0;
             this.Inventario = 0;
             this.Precio = 0;
             this.Fecha = DateTime.Now;

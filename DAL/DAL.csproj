@@ -64,6 +64,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Scripts\Scripts.sql" />
+    <Content Include="Scripts\ScriptsControl.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,7 +33,6 @@
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CedulaTextBox = new System.Windows.Forms.TextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
-            this.TelefonoTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.CelulartextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -54,6 +52,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.DeudaTextBox = new System.Windows.Forms.TextBox();
+            this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -85,16 +85,8 @@
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(86, 92);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(239, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(145, 20);
             this.DirecciontextBox.TabIndex = 25;
-            // 
-            // TelefonoTextBox
-            // 
-            this.TelefonoTextBox.Location = new System.Drawing.Point(86, 245);
-            this.TelefonoTextBox.Name = "TelefonoTextBox";
-            this.TelefonoTextBox.Size = new System.Drawing.Size(239, 20);
-            this.TelefonoTextBox.TabIndex = 24;
-            this.TelefonoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoTextBox_KeyPress);
             // 
             // label6
             // 
@@ -150,7 +142,7 @@
             // 
             this.NombrestextBox.Location = new System.Drawing.Point(86, 54);
             this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(239, 20);
+            this.NombrestextBox.Size = new System.Drawing.Size(145, 20);
             this.NombrestextBox.TabIndex = 18;
             // 
             // label1
@@ -167,7 +159,7 @@
             // 
             this.EmailtextBox.Location = new System.Drawing.Point(86, 167);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(239, 20);
+            this.EmailtextBox.Size = new System.Drawing.Size(145, 20);
             this.EmailtextBox.TabIndex = 34;
             // 
             // label7
@@ -179,14 +171,6 @@
             this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 33;
             this.label7.Text = "Email";
-            // 
-            // CelulartextBox
-            // 
-            this.CelulartextBox.Location = new System.Drawing.Point(86, 202);
-            this.CelulartextBox.Name = "CelulartextBox";
-            this.CelulartextBox.Size = new System.Drawing.Size(239, 20);
-            this.CelulartextBox.TabIndex = 36;
-            this.CelulartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelulartextBox_KeyPress);
             // 
             // label8
             // 
@@ -250,7 +234,7 @@
             this.CedulaMaskedTextBox.Location = new System.Drawing.Point(86, 129);
             this.CedulaMaskedTextBox.Mask = "000-0000000-0";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
-            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(239, 20);
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(91, 20);
             this.CedulaMaskedTextBox.TabIndex = 146;
             this.CedulaMaskedTextBox.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.CedulaMaskedTextBox_TypeValidationCompleted);
             this.CedulaMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaMaskedTextBox_KeyDown);
@@ -276,6 +260,22 @@
             this.DeudaTextBox.Size = new System.Drawing.Size(83, 34);
             this.DeudaTextBox.TabIndex = 148;
             // 
+            // CelularMaskedTextBox
+            // 
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(86, 205);
+            this.CelularMaskedTextBox.Mask = "(999)000-0000";
+            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
+            this.CelularMaskedTextBox.Size = new System.Drawing.Size(91, 20);
+            this.CelularMaskedTextBox.TabIndex = 149;
+            // 
+            // TelefonoMaskedTextBox
+            // 
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(86, 241);
+            this.TelefonoMaskedTextBox.Mask = "(999)000-0000";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(91, 20);
+            this.TelefonoMaskedTextBox.TabIndex = 150;
+            // 
             // rClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,13 +283,14 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(335, 413);
+            this.Controls.Add(this.TelefonoMaskedTextBox);
+            this.Controls.Add(this.CelularMaskedTextBox);
             this.Controls.Add(this.DeudaTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.CelulartextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(this.label7);
@@ -298,7 +299,6 @@
             this.Controls.Add(this.IdnumericUpDown);
             this.Controls.Add(this.CedulaTextBox);
             this.Controls.Add(this.DirecciontextBox);
-            this.Controls.Add(this.TelefonoTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -321,7 +321,6 @@
         private System.Windows.Forms.NumericUpDown IdnumericUpDown;
         private System.Windows.Forms.TextBox CedulaTextBox;
         private System.Windows.Forms.TextBox DirecciontextBox;
-        private System.Windows.Forms.TextBox TelefonoTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -331,7 +330,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmailtextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox CelulartextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
@@ -341,5 +339,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox DeudaTextBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox CelularMaskedTextBox;
     }
 }

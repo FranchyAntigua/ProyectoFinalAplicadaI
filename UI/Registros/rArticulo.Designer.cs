@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GanancianumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -52,19 +51,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MedidaComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).BeginInit();
+            this.GananciaTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GanancianumericUpDown
-            // 
-            this.GanancianumericUpDown.Location = new System.Drawing.Point(109, 212);
-            this.GanancianumericUpDown.Name = "GanancianumericUpDown";
-            this.GanancianumericUpDown.Size = new System.Drawing.Size(115, 20);
-            this.GanancianumericUpDown.TabIndex = 38;
             // 
             // PrecionumericUpDown
             // 
@@ -77,6 +69,7 @@
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(114, 20);
             this.PrecionumericUpDown.TabIndex = 37;
+            this.PrecionumericUpDown.ValueChanged += new System.EventHandler(this.PrecionumericUpDown_ValueChanged_1);
             // 
             // CostonumericUpDown
             // 
@@ -89,6 +82,7 @@
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(114, 20);
             this.CostonumericUpDown.TabIndex = 36;
+            this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.CostonumericUpDown_ValueChanged_1);
             // 
             // IdnumericUpDown
             // 
@@ -279,6 +273,14 @@
             this.MedidaComboBox.Size = new System.Drawing.Size(116, 21);
             this.MedidaComboBox.TabIndex = 149;
             // 
+            // GananciaTextBox
+            // 
+            this.GananciaTextBox.Location = new System.Drawing.Point(109, 214);
+            this.GananciaTextBox.Name = "GananciaTextBox";
+            this.GananciaTextBox.ReadOnly = true;
+            this.GananciaTextBox.Size = new System.Drawing.Size(114, 20);
+            this.GananciaTextBox.TabIndex = 150;
+            // 
             // rArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +288,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(323, 433);
+            this.Controls.Add(this.GananciaTextBox);
             this.Controls.Add(this.MedidaComboBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label9);
@@ -296,7 +299,6 @@
             this.Controls.Add(this.ITBIStextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.GanancianumericUpDown);
             this.Controls.Add(this.PrecionumericUpDown);
             this.Controls.Add(this.CostonumericUpDown);
             this.Controls.Add(this.IdnumericUpDown);
@@ -310,7 +312,6 @@
             this.Controls.Add(this.label1);
             this.Name = "rArticulo";
             this.Text = "Registro De Articulos";
-            ((System.ComponentModel.ISupportInitialize)(this.GanancianumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
@@ -321,8 +322,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown GanancianumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
         private System.Windows.Forms.NumericUpDown CostonumericUpDown;
         private System.Windows.Forms.NumericUpDown IdnumericUpDown;
@@ -345,5 +344,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.ComboBox MedidaComboBox;
+        private System.Windows.Forms.TextBox GananciaTextBox;
     }
 }

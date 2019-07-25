@@ -55,11 +55,9 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             DescripciontextBox.Clear();
             CostonumericUpDown.Value = 0;
             InventariotextBox.Clear();
-            GanancianumericUpDown.Value = 0;
+            GananciaTextBox.Clear();
             PrecionumericUpDown.Value = 0;
             InventariotextBox.Text = 0.ToString();
-
-
             MyErrorProvider.Clear();
         }
 
@@ -72,10 +70,10 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             articulos.Descripcion = DescripciontextBox.Text;
             articulos.Medida = MedidaComboBox.Text;
             articulos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            articulos.Ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
+            articulos.Ganancia = Convert.ToDecimal(GananciaTextBox.Text);
             articulos.Precio = Convert.ToDecimal(PrecionumericUpDown.Value);
             articulos.Inventario = Convert.ToInt32(InventariotextBox.Text);
-
+            articulos.Itbis = Convert.ToDecimal(ITBIStextBox.Text);
             return articulos;
         }
 
@@ -137,7 +135,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                     DescripciontextBox.Text = articulos.Descripcion;
                     MedidaComboBox.Text = articulos.Medida;
                     CostonumericUpDown.Value = articulos.Costo;
-                    GanancianumericUpDown.Value = articulos.Ganancia;
+                    GananciaTextBox.Text = articulos.Ganancia.ToString();
                     PrecionumericUpDown.Value = articulos.Precio;
                     InventariotextBox.Text = articulos.Inventario.ToString();
                 }
@@ -182,55 +180,51 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
-
-            if (PrecionumericUpDown.Value != 0 && CostonumericUpDown.Value != 0)
-            {
-                GanancianumericUpDown.Value = BLL.ArticulosBLL.CalcularGanancia(costo, precio);
-                return;
-            }
-
-            if (CostonumericUpDown.Value != 0 && GanancianumericUpDown.Value != 0 && PrecionumericUpDown.Value == 0)
-            {
-
-                PrecionumericUpDown.Value = BLL.ArticulosBLL.CalcularPrecio(costo, ganancia);
-                return;
-            }
+            
         }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
-
-            if (PrecionumericUpDown.Value != 0 && CostonumericUpDown.Value != 0 && CostonumericUpDown.Value < PrecionumericUpDown.Value)
-            {
-                GanancianumericUpDown.Value = BLL.ArticulosBLL.CalcularGanancia(costo, precio);
-                return;
-
-            }
+            
         }
 
         private void GanancianumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
-            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
-            decimal ganancia = Convert.ToDecimal(GanancianumericUpDown.Value);
+            //decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+            //decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+            //decimal ganancia = Convert.ToDecimal(GananciaTextBox.Text);
 
 
-            if (CostonumericUpDown.Value != 0 && GanancianumericUpDown.Value != 0)
-            {
+            //if (CostonumericUpDown.Value != 0 && GananciaTextBox.Text != "0")
+            //{
 
-                PrecionumericUpDown.Value = BLL.ArticulosBLL.CalcularPrecio(costo, ganancia);
-                return;
-            }
+            //    PrecionumericUpDown.Value = BLL.ArticulosBLL.CalcularPrecio(costo, ganancia);
+            //    return;
+            //}
         }
 
         private void ITBIStextBox_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void PrecionumericUpDown_ValueChanged_1(object sender, EventArgs e)
+        {
+            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+            decimal precio = Convert.ToDecimal(PrecionumericUpDown.Value);
+            decimal ganancia = 0;
+
+            if (PrecionumericUpDown.Value != 0 && CostonumericUpDown.Value != 0 && CostonumericUpDown.Value < PrecionumericUpDown.Value)
+            {
+                ganancia = precio - costo;
+                GananciaTextBox.Text = ganancia.ToString();
+                return;
+
+            }
+        }
+
+        private void CostonumericUpDown_ValueChanged_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

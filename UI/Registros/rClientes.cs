@@ -28,8 +28,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             cli.Direccion = DirecciontextBox.Text;
             cli.Email = EmailtextBox.Text;
             cli.Cedula = CedulaMaskedTextBox.Text;
-            cli.Celular = CelulartextBox.Text;
-            cli.Telefono = TelefonoTextBox.Text;
+            cli.Celular = CelularMaskedTextBox.Text;
+            cli.Telefono = TelefonoMaskedTextBox.Text;
             cli.Deuda = 0;
 
             return cli;
@@ -42,8 +42,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             DirecciontextBox.Clear();
             EmailtextBox.Clear();
             CedulaMaskedTextBox.Clear();
-            CelulartextBox.Clear();
-            TelefonoTextBox.Clear();
+            CelularMaskedTextBox.Clear();
+            TelefonoMaskedTextBox.Clear();
             DeudaTextBox.Text = "0";
             MyErrorProvider.Clear();
         }
@@ -70,13 +70,53 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             if (String.IsNullOrWhiteSpace(DirecciontextBox.Text))
             {
                 MyErrorProvider.SetError(DirecciontextBox,
-                    "No es válido");
+                    "No puede estar vacio");
                 estado = true;
             }
 
-            if (CedulaMaskedTextBox.Text.Length != 13)//sino tiene 13 no es valido
+            if (String.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(CedulaMaskedTextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(CelularMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(CelularMaskedTextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(TelefonoMaskedTextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(EmailtextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailtextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (CedulaMaskedTextBox.Text.Length < 11)//sino tiene 13 no es valido
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox, "No es válido");
+                estado = true;
+            }
+
+            if (CelularMaskedTextBox.Text.Length < 10)//sino tiene 13 no es valido
+            {
+                MyErrorProvider.SetError(CelularMaskedTextBox, "No es válido");
+                estado = true;
+            }
+
+            if (TelefonoMaskedTextBox.Text.Length < 10)//sino tiene 13 no es valido
+            {
+                MyErrorProvider.SetError(TelefonoMaskedTextBox, "No es válido");
                 estado = true;
             }
 
@@ -101,8 +141,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 DirecciontextBox.Text = cli.Direccion;
                 CedulaMaskedTextBox.Text = cli.Cedula;
                 EmailtextBox.Text = cli.Email;
-                CelulartextBox.Text = cli.Celular;
-                TelefonoTextBox.Text = cli.Telefono;
+                CelularMaskedTextBox.Text = cli.Celular;
+                TelefonoMaskedTextBox.Text = cli.Telefono;
                 DeudaTextBox.Text = cli.Deuda.ToString();
                 FechadateTimePicker.Value = cli.Fecha;
             }

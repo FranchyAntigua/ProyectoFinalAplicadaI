@@ -56,9 +56,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ArticulosTest.cs" />
     <Compile Include="BLL\ClienteTest.cs" />
-    <Compile Include="BLL\EntradaArticulosTest.cs" />
     <Compile Include="BLL\UsuariosTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
