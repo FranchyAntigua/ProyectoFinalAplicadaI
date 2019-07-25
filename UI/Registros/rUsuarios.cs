@@ -87,6 +87,13 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 estado = true;
             }
 
+            if (String.IsNullOrWhiteSpace(EmailtextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailtextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
             if (String.IsNullOrWhiteSpace(UsuariotextBox.Text))
             {
                 MyErrorProvider.SetError(UsuariotextBox,
@@ -120,6 +127,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             {
                 FechaIngresoDateTimePicker.Value = usuario.FechaIngreso;
                 NombretextBox.Text = usuario.Usuario;
+                EmailtextBox.Text = usuario.Email;
                 UsuariotextBox.Text = usuario.Usuario;
                 ContraseñatextBox.Text = usuario.Contrasena;
                 ConfirmarTextBox.Text = usuario.Contrasena;

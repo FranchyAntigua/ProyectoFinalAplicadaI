@@ -18,37 +18,69 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             InitializeComponent();
         }
 
-        private bool validar(int error)
+        private bool Validar()
         {
-            bool errores = false;
+            bool estado = false;
 
-            if (error == 1 && IdnumericUpDown.Value == 0)
+            if (IdnumericUpDown.Value < 0)
             {
-                MyErrorProvider.SetError(IdnumericUpDown, "Debe Llenar El Id");
-                errores = true;
-            }
-            if (error == 2 && string.IsNullOrEmpty(DescripciontextBox.Text))
-            {
-                MyErrorProvider.SetError(DescripciontextBox, "Debe Llenar La Descripcion");
-                errores = true;
+                MyErrorProvider.SetError(IdnumericUpDown,
+                    "No es un id válido");
+                estado = true;
             }
 
-            if (error == 2 && PrecionumericUpDown.Value == 0)
+            if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
-                MyErrorProvider.SetError(PrecionumericUpDown, "Debe Llenar El Precio");
-                errores = true;
+                MyErrorProvider.SetError(DescripciontextBox,
+                    "No puede estar vacio");
+                estado = true;
             }
 
-
-            if (error == 2 && string.IsNullOrEmpty(InventariotextBox.Text))
+            if (MedidaComboBox.SelectedIndex < 0)
             {
-                MyErrorProvider.SetError(InventariotextBox, "Debe Llenar El Inventario");
-                errores = true;
+                MyErrorProvider.SetError(IdnumericUpDown,
+                    "Debe seleccionar una Medida");
+                estado = true;
             }
 
-            return errores;
+            if (CostonumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(CostonumericUpDown,
+                    "No es un Costo válido");
+                estado = true;
+            }
 
+            if (PrecionumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(PrecionumericUpDown,
+                    "No es un Precio válido");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(InventariotextBox.Text))
+            {
+                MyErrorProvider.SetError(InventariotextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(GananciaTextBox.Text))
+            {
+                MyErrorProvider.SetError(GananciaTextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            if (String.IsNullOrWhiteSpace(ITBIStextBox.Text))
+            {
+                MyErrorProvider.SetError(ITBIStextBox,
+                    "No puede estar vacio");
+                estado = true;
+            }
+
+            return estado;
         }
+
         private void Limpiar()
         {
             IdnumericUpDown.Value = 0;
@@ -80,15 +112,15 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Articulo articulos = Llenaclase();
-
-
-            if (validar(2))
+            Articulo articulos;
+            if (Validar())
             {
                 MessageBox.Show("Debe Llenar Todos Los Campos");
+                return;
             }
             else
             {
+                articulos = Llenaclase();
                 if (IdnumericUpDown.Value == 0)
                 {
                     paso = BLL.ArticulosBLL.Guardar(articulos);
@@ -120,57 +152,45 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (validar(1))
+            int id = Convert.ToInt32(IdnumericUpDown.Value);
+            Articulo articulos = BLL.ArticulosBLL.Buscar(id);
+
+            if (articulos != null)
             {
-                MessageBox.Show(" Debe Llenar Todos Los Campos");
+                IdnumericUpDown.Value = articulos.ArticuloId;
+                DescripciontextBox.Text = articulos.Descripcion;
+                MedidaComboBox.Text = articulos.Medida;
+                CostonumericUpDown.Value = articulos.Costo;
+                GananciaTextBox.Text = articulos.Ganancia.ToString();
+                PrecionumericUpDown.Value = articulos.Precio;
+                InventariotextBox.Text = articulos.Inventario.ToString();
             }
             else
             {
-                int id = Convert.ToInt32(IdnumericUpDown.Value);
-                Articulo articulos = BLL.ArticulosBLL.Buscar(id);
-
-                if (articulos != null)
-                {
-                    IdnumericUpDown.Value = articulos.ArticuloId;
-                    DescripciontextBox.Text = articulos.Descripcion;
-                    MedidaComboBox.Text = articulos.Medida;
-                    CostonumericUpDown.Value = articulos.Costo;
-                    GananciaTextBox.Text = articulos.Ganancia.ToString();
-                    PrecionumericUpDown.Value = articulos.Precio;
-                    InventariotextBox.Text = articulos.Inventario.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("No Se Puede Encontrado!",
-                        "Intente De Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                MyErrorProvider.Clear();
+                MessageBox.Show("No Se Puede Encontrado!",
+                    "Intente De Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            MyErrorProvider.Clear();
+
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (validar(1))
+            int id = Convert.ToInt32(IdnumericUpDown.Value);
+
+            if (BLL.ArticulosBLL.Eliminar(id))
             {
-                MessageBox.Show("Debe Llenar Todos Los Campos");
+                MessageBox.Show("Eliminado!",
+                    "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
-                int id = Convert.ToInt32(IdnumericUpDown.Value);
-
-                if (BLL.ArticulosBLL.Eliminar(id))
-                {
-                    MessageBox.Show("Eliminado!",
-                        "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("No Se Puede Eliminar!",
-                        "Intente De Nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                MyErrorProvider.Clear();
+                MessageBox.Show("No Se Puede Eliminar!",
+                    "Intente De Nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            MyErrorProvider.Clear();
+
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -180,12 +200,12 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void GanancianumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -224,7 +244,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
         private void CostonumericUpDown_ValueChanged_1(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
