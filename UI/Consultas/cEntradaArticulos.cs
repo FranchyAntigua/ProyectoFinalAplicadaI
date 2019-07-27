@@ -106,9 +106,15 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
             if (RangoFechaCheckBox.Checked == true)
+            {
+                //agregar la lista y llenarla con el metodo buscarranofecha
+                //Asiganar la lista al datasource de COnsultataDatagridview
                 ConsultaDataGridView.DataSource = BuscarRangoFecha();
+            }
             else
+            {
                 ConsultaDataGridView.DataSource = Buscar();
+            }
         }
 
         private void CriterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,6 +145,11 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 MessageBox.Show("Solo se puede digitar Números", "Falló",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

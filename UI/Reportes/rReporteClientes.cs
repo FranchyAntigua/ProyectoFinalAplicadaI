@@ -12,29 +12,28 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalAplicadaI.UI.Reportes
 {
-    public partial class rReporteUsuario : Form
+    public partial class rReporteClientes : Form
     {
-        public List<Usuarios> listaUsuarios { get; set; }
+        public List<Clientes> listaClientes { get; set; }
         string rutaReportes = @"C:\Users\user\source\repos\ProyectoFinalAplicadaI\UI\Reportes\";
 
-        public rReporteUsuario()
+        public rReporteClientes()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
-
         public void Visualizar(string reporte)
         {
             ReportDocument report = new ReportDocument();
             report.Load($"{rutaReportes}{reporte}.rpt");
 
-            report.SetDataSource(listaUsuarios);
-            UsuarioCrystalReportViewer.ReportSource = report;
-            UsuarioCrystalReportViewer.Refresh();
+            report.SetDataSource(listaClientes);
+            ClienteCrystalReportViewer.ReportSource = report;
+            ClienteCrystalReportViewer.Refresh();
 
             ShowDialog();
         }
 
-        private void UsuarioCrystalReportViewer_Load(object sender, EventArgs e)
+        private void ClienteCrystalReportViewer_Load(object sender, EventArgs e)
         {
 
         }

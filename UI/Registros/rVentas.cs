@@ -16,25 +16,33 @@ namespace ProyectoFinalAplicadaI.UI.Registros
     public partial class rVentas : Form
     {
         Expression<Func<Ventas, bool>> filtral = x => 1 == 1;
+        public Articulo Article { get; set; }
 
         public rVentas()
         {
             InitializeComponent();
             LlenarComboBox();
+            VentasGridView.AutoGenerateColumns = false;
         }
         private void LlenarComboBox()
         {
             Repositorio<Clientes> Repositorio = new Repositorio<Clientes>();
             Repositorio<Articulo> RepositorioA = new Repositorio<Articulo>();
 
+            ClienteComboBox.DataSource = null;
             ClienteComboBox.DataSource = Repositorio.GetList(c => true);
             ClienteComboBox.ValueMember = "ClienteId";
             ClienteComboBox.DisplayMember = "Nombres";
-            ArticuloComboBox.DataSource = RepositorioA.GetList(c => true);
-            ArticuloComboBox.ValueMember = "ArticuloId";
-            ArticuloComboBox.DisplayMember = "Descripcion";
 
             CambiarPrecio();
+        }
+
+        private void LimpiarCamposDetalle()
+        {
+            CantidadTextBox.Clear();
+            idArticulotextBox.Clear();
+            DescripcionArtculolabel.Text = string.Empty;
+            PrecioTextBox.Text = "0.00";
         }
 
         private void LlenaCampos(Ventas venta)
@@ -51,8 +59,6 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             VentasGridView.Columns["Id"].Visible = false;
             VentasGridView.Columns["VentaId"].Visible = false;
             VentasGridView.Columns["ArticuloId"].Visible = false;
-            VentasGridView.Columns["Articulo"].Visible = false;
-            VentasGridView.Columns["Venta"].Visible = false;
         }
 
         private int ToInt(object valor)
@@ -90,7 +96,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                     ToInt(item.Cells["ArticuloId"].Value),
                     (item.Cells["Descripcion"].Value).ToString(),
                     ToInt(item.Cells["Cantidad"].Value),
-                    Convert.ToDecimal(item.Cells["Precio"].Value),
+                    Convert.ToDecimal(item.Cells["PrecioArt"].Value),
                     Convert.ToDecimal(item.Cells["Importe"].Value)
                 );
             }
@@ -98,20 +104,18 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             VentasGridView.Columns["Id"].Visible = false;
             VentasGridView.Columns["VentaId"].Visible = false;
             VentasGridView.Columns["ArticuloId"].Visible = false;
-            VentasGridView.Columns["Articulo"].Visible = false;
-            VentasGridView.Columns["Venta"].Visible = false;
 
             return venta;
         }
 
         private void Precio()
         {
-            Repositorio<Articulo> Repositorio = new Repositorio<Articulo>();
-            List<Articulo> ListProductos = Repositorio.GetList(c => c.Descripcion == ArticuloComboBox.Text);
-            foreach (var item in ListProductos)
-            {
-                PrecioTextBox.Text = item.Precio.ToString();
-            }
+            //Repositorio<Articulo> Repositorio = new Repositorio<Articulo>();
+            
+            //foreach (var item in ListProductos)
+            //{
+            //    PrecioTextBox.Text = item.Precio.ToString();
+            //}
         }
 
         private void LlenarImporte()
@@ -175,7 +179,6 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             VentaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             ClienteComboBox.SelectedIndex = 0;
-            ArticuloComboBox.SelectedIndex = 0;
             CantidadTextBox.Clear();
             PrecioTextBox.Clear();
             ImporteTextBox.Clear();
@@ -184,6 +187,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             ItbisTextBox.Clear();
             TotalTextBox.Clear();
             MyErrorProvider.Clear();
+            LlenarComboBox();
         }
 
         private bool Validar()
@@ -216,26 +220,42 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 return;
             }
 
-            detalle.Add(
+            if (Article.Inventario >= cantidad)
+            {
+                if (detalle.Where(a => a.ArticuloId == Article.ArticuloId).ToList() .Count == 0)
+                {
+                    detalle.Add(
                 new VentasDetalles(
-                   id: 0,
+                   id: detalle.Count+1,
                    ventaId: (int)VentaIdNumericUpDown.Value,
-                   articuloId: (int)ArticuloComboBox.SelectedValue,
-                   descripcion: ArticuloComboBox.Text,
-                   cantidad: ToInt(CantidadTextBox.Text),
+                   articuloId: Article.ArticuloId,
+                   descripcion: Article.Descripcion,
+                   cantidad: cantidad,
                    precio: (decimal)Convert.ToDecimal(PrecioTextBox.Text),
                    importe: (decimal)Convert.ToDecimal(ImporteTextBox.Text)
-           ));
+                 ));
 
-            VentasGridView.DataSource = null;
-            VentasGridView.DataSource = detalle;
-            VentasGridView.Columns["Id"].Visible = false;
-            VentasGridView.Columns["VentaId"].Visible = false;
-            VentasGridView.Columns["ArticuloId"].Visible = false;
-            VentasGridView.Columns["Articulo"].Visible = false;
-            VentasGridView.Columns["Venta"].Visible = false;
-            Aumentar();
+                    VentasGridView.DataSource = null;
+                    VentasGridView.DataSource = detalle;
+                    VentasGridView.Columns["Id"].Visible = false;
+                    VentasGridView.Columns["VentaId"].Visible = false;
+                    VentasGridView.Columns["ArticuloId"].Visible = false;
+                    Aumentar();
 
+                    LimpiarCamposDetalle();
+                }
+                else
+                {
+                    MessageBox.Show("Ya el articulo que intentas agregar está en el detalle", "Precaución");
+                    LimpiarCamposDetalle();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"La existencia disponible no es suficiente para realizar la venta" +
+                    $"\nExistencia: {Article.Inventario}", "Precausión");
+                LimpiarCamposDetalle();
+            }
         }
 
         private void RemoverButton_Click(object sender, EventArgs e)
@@ -279,7 +299,8 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             {
                 int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
                 RepositorioVentas repository = new RepositorioVentas();
-                Ventas ven = repository.Buscar(id);
+                Ventas ven = LlenaClase();
+                ven.VentaId = id;
 
                 if (ven != null)
                 {
@@ -344,10 +365,13 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         }
         private void CambiarPrecio()
         {
-            PrecioTextBox.DataBindings.Clear();
-            Binding doBinding = new Binding("Text", ArticuloComboBox.DataSource, "Precio");
-            doBinding.Format += new ConvertEventHandler(FormatoMoneda);
-            PrecioTextBox.DataBindings.Add(doBinding);
+            if (Article != null)
+            {
+                //PrecioTextBox.DataBindings.Clear();
+                //Binding doBinding = new Binding("Text", ArticuloComboBox.DataSource, "Precio");
+                //doBinding.Format += new ConvertEventHandler(FormatoMoneda);
+                //PrecioTextBox.DataBindings.Add(doBinding);
+            }
         }
         private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -382,6 +406,24 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             else
                 MessageBox.Show("No se encontró!!!", "Falló",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void BuscarArticulobutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(idArticulotextBox.Text);
+            Article = BLL.ArticulosBLL.Buscar(id);
+
+            if (Article != null)
+            {
+                idArticulotextBox.Text = Article.ArticuloId.ToString();
+                DescripcionArtculolabel.Text = Article.Descripcion;
+                PrecioTextBox.Text = Article.Precio.ToString("N2");
+            }
+            else
+            {
+                MessageBox.Show("No Se Puede Encontrado!",
+                    "Intente De Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -312,6 +312,7 @@
             this.Controls.Add(this.label1);
             this.Name = "rArticulo";
             this.Text = "Registro De Articulos";
+            this.Load += new System.EventHandler(this.RArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();

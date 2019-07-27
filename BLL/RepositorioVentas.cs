@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -18,7 +19,6 @@ namespace BLL
             try
             {
                 if (contexto.Ventas.Add(ventas) != null)
-
                     foreach (var item in ventas.Detalle)
                     {
                         contexto.articulos.Find(item.ArticuloId).Inventario -= item.Cantidad;
@@ -94,6 +94,35 @@ namespace BLL
                 throw;
             }
             return ventas;
+        }
+
+        public override bool Modificar(Ventas entity)
+        {
+            bool result = false;
+
+            try
+            {
+                Contexto contexto = new Contexto();
+
+                SqlParameter ventaId = new SqlParameter("@VentaId", entity.VentaId);
+                string sql = "DELETE FROM VentasDetalles WHERE VentaId=@VentaId;";
+
+                contexto.Database.ExecuteSqlCommand(sql, ventaId);
+                contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                foreach (VentasDetalles vd in entity.Detalle)
+                {
+                    contexto.Entry(vd).State = System.Data.Entity.EntityState.Added;
+                }
+
+                result = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result;
         }
 
         public override List<Ventas> GetList(Expression<Func<Ventas, bool>> expression)

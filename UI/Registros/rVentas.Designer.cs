@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VentaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ArticuloComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ClienteComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +59,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CantidadTextBox = new System.Windows.Forms.TextBox();
+            this.idArticulotextBox = new System.Windows.Forms.TextBox();
+            this.BuscarArticulobutton = new System.Windows.Forms.Button();
+            this.DescripcionArtculolabel = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArticuloId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioArt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VentaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.VentaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentasGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -65,14 +76,14 @@
             // 
             // VentaIdNumericUpDown
             // 
-            this.VentaIdNumericUpDown.Location = new System.Drawing.Point(101, 20);
+            this.VentaIdNumericUpDown.Location = new System.Drawing.Point(80, 15);
             this.VentaIdNumericUpDown.Name = "VentaIdNumericUpDown";
             this.VentaIdNumericUpDown.Size = new System.Drawing.Size(82, 20);
             this.VentaIdNumericUpDown.TabIndex = 152;
             // 
             // PrecioTextBox
             // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(226, 121);
+            this.PrecioTextBox.Location = new System.Drawing.Point(226, 118);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.ReadOnly = true;
             this.PrecioTextBox.Size = new System.Drawing.Size(64, 20);
@@ -83,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 88);
+            this.label3.Location = new System.Drawing.Point(10, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 150;
@@ -93,21 +104,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 25);
+            this.label1.Location = new System.Drawing.Point(10, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 149;
             this.label1.Text = "Venta Id";
-            // 
-            // ArticuloComboBox
-            // 
-            this.ArticuloComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ArticuloComboBox.FormattingEnabled = true;
-            this.ArticuloComboBox.Location = new System.Drawing.Point(99, 83);
-            this.ArticuloComboBox.Name = "ArticuloComboBox";
-            this.ArticuloComboBox.Size = new System.Drawing.Size(159, 21);
-            this.ArticuloComboBox.TabIndex = 155;
-            this.ArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.ArticuloComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -123,7 +124,7 @@
             // 
             this.ClienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClienteComboBox.FormattingEnabled = true;
-            this.ClienteComboBox.Location = new System.Drawing.Point(99, 61);
+            this.ClienteComboBox.Location = new System.Drawing.Point(78, 50);
             this.ClienteComboBox.Name = "ClienteComboBox";
             this.ClienteComboBox.Size = new System.Drawing.Size(159, 21);
             this.ClienteComboBox.TabIndex = 158;
@@ -132,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 67);
+            this.label4.Location = new System.Drawing.Point(10, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 157;
@@ -178,7 +179,7 @@
             // 
             // ImporteTextBox
             // 
-            this.ImporteTextBox.Location = new System.Drawing.Point(358, 121);
+            this.ImporteTextBox.Location = new System.Drawing.Point(358, 118);
             this.ImporteTextBox.Name = "ImporteTextBox";
             this.ImporteTextBox.ReadOnly = true;
             this.ImporteTextBox.Size = new System.Drawing.Size(76, 20);
@@ -186,8 +187,17 @@
             // 
             // VentasGridView
             // 
+            this.VentasGridView.AllowUserToAddRows = false;
             this.VentasGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.VentasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VentasGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.ArticuloId,
+            this.Descripcion,
+            this.Cantidad,
+            this.PrecioArt,
+            this.Importe,
+            this.VentaId});
             this.VentasGridView.Location = new System.Drawing.Point(13, 142);
             this.VentasGridView.Name = "VentasGridView";
             this.VentasGridView.Size = new System.Drawing.Size(546, 150);
@@ -219,7 +229,7 @@
             // 
             this.BuscarButton.BackColor = System.Drawing.Color.White;
             this.BuscarButton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_241;
-            this.BuscarButton.Location = new System.Drawing.Point(189, 12);
+            this.BuscarButton.Location = new System.Drawing.Point(168, 9);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(75, 32);
             this.BuscarButton.TabIndex = 154;
@@ -329,11 +339,99 @@
             // 
             // CantidadTextBox
             // 
-            this.CantidadTextBox.Location = new System.Drawing.Point(101, 120);
+            this.CantidadTextBox.Location = new System.Drawing.Point(101, 118);
             this.CantidadTextBox.Name = "CantidadTextBox";
             this.CantidadTextBox.Size = new System.Drawing.Size(64, 20);
             this.CantidadTextBox.TabIndex = 175;
             this.CantidadTextBox.TextChanged += new System.EventHandler(this.CantidadTextBox_TextChanged);
+            // 
+            // idArticulotextBox
+            // 
+            this.idArticulotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.idArticulotextBox.Location = new System.Drawing.Point(78, 80);
+            this.idArticulotextBox.Name = "idArticulotextBox";
+            this.idArticulotextBox.Size = new System.Drawing.Size(43, 21);
+            this.idArticulotextBox.TabIndex = 176;
+            // 
+            // BuscarArticulobutton
+            // 
+            this.BuscarArticulobutton.BackColor = System.Drawing.Color.White;
+            this.BuscarArticulobutton.Image = global::ProyectoFinalAplicadaI.Properties.Resources.icons8_búsqueda_241;
+            this.BuscarArticulobutton.Location = new System.Drawing.Point(127, 74);
+            this.BuscarArticulobutton.Name = "BuscarArticulobutton";
+            this.BuscarArticulobutton.Size = new System.Drawing.Size(31, 32);
+            this.BuscarArticulobutton.TabIndex = 154;
+            this.BuscarArticulobutton.UseVisualStyleBackColor = false;
+            this.BuscarArticulobutton.Click += new System.EventHandler(this.BuscarArticulobutton_Click);
+            // 
+            // DescripcionArtculolabel
+            // 
+            this.DescripcionArtculolabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DescripcionArtculolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.DescripcionArtculolabel.Location = new System.Drawing.Point(165, 79);
+            this.DescripcionArtculolabel.Name = "DescripcionArtculolabel";
+            this.DescripcionArtculolabel.Size = new System.Drawing.Size(262, 23);
+            this.DescripcionArtculolabel.TabIndex = 177;
+            this.DescripcionArtculolabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ArticuloId
+            // 
+            this.ArticuloId.DataPropertyName = "articuloId";
+            this.ArticuloId.HeaderText = "ArticuloId";
+            this.ArticuloId.Name = "ArticuloId";
+            this.ArticuloId.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // PrecioArt
+            // 
+            this.PrecioArt.DataPropertyName = "precio";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0.00";
+            this.PrecioArt.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PrecioArt.HeaderText = "Precio";
+            this.PrecioArt.Name = "PrecioArt";
+            this.PrecioArt.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.DataPropertyName = "importe";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0.00";
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // VentaId
+            // 
+            this.VentaId.DataPropertyName = "ventaId";
+            this.VentaId.HeaderText = "VentaId";
+            this.VentaId.Name = "VentaId";
+            this.VentaId.ReadOnly = true;
+            this.VentaId.Visible = false;
             // 
             // rVentas
             // 
@@ -341,6 +439,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(571, 443);
+            this.Controls.Add(this.DescripcionArtculolabel);
+            this.Controls.Add(this.idArticulotextBox);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.label10);
@@ -360,7 +460,7 @@
             this.Controls.Add(this.ClienteComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ArticuloComboBox);
+            this.Controls.Add(this.BuscarArticulobutton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.VentaIdNumericUpDown);
             this.Controls.Add(this.PrecioTextBox);
@@ -389,7 +489,6 @@
         private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ArticuloComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ClienteComboBox;
         private System.Windows.Forms.Label label4;
@@ -410,5 +509,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.TextBox CantidadTextBox;
+        private System.Windows.Forms.Label DescripcionArtculolabel;
+        private System.Windows.Forms.TextBox idArticulotextBox;
+        private System.Windows.Forms.Button BuscarArticulobutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArticuloId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioArt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VentaId;
     }
 }

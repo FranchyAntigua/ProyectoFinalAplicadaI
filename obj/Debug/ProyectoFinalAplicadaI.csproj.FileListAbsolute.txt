@@ -52,3 +52,5 @@ C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicad
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.pdb
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rArticulo.resources
 C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Registros.rVentas.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Reportes.rReporteClientes.resources
+C:\Users\user\source\repos\ProyectoFinalAplicadaI\obj\Debug\ProyectoFinalAplicadaI.UI.Reportes.rReporteArticulos.resources

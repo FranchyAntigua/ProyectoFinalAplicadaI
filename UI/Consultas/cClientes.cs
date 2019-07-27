@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using ProyectoFinalAplicadaI.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cClientes : Form
     {
+        private List<Clientes> lista = new List<Clientes>();
+        Expression<Func<Clientes, bool>> filtro = f => true;
         public cClientes()
         {
             InitializeComponent();
@@ -115,9 +118,15 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         private void ButtonBuscar_Click(object sender, EventArgs e)
         {
             if (RangoFechaCheckBox.Checked == true)
-                ConsultaDataGridView.DataSource = BuscarRangoFecha();
+            {
+                lista = BuscarRangoFecha();
+                ConsultaDataGridView.DataSource = lista;
+            }
             else
-                ConsultaDataGridView.DataSource = Buscar();
+            {
+                lista = Buscar();
+                ConsultaDataGridView.DataSource = lista;
+            }
         }
 
         private void CriterioTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -159,6 +168,22 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             if (CriterioTextBox.Text != "")
             {
                 MyErrorProvider.Clear();
+            }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            if (lista.Count == 0)
+            {
+                MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                rReporteClientes rReporte = new rReporteClientes() {
+                    listaClientes = lista
+                };
+                rReporte.Visualizar("CrpClientes");
             }
         }
     }

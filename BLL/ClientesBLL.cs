@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-  public  class ClientesBLL
+    public class ClientesBLL
     {
         public static bool Guardar(Clientes clientes)
         {
@@ -38,10 +38,8 @@ namespace BLL
             try
             {
                 contexto.Entry(clientes).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    estado = true;
-                }
+                estado = contexto.SaveChanges() > 0;
+
                 contexto.Dispose();
             }
             catch (Exception)

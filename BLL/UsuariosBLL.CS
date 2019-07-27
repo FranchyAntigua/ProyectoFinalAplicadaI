@@ -43,10 +43,9 @@ namespace BLL
             try
             {
                 contexto.Entry(usuario).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    estado = true;
-                }
+
+                estado = contexto.SaveChanges() > 0;
+
                 contexto.Dispose();
             }
             catch (Exception)

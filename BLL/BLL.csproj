@@ -56,6 +56,7 @@
     <Compile Include="Repositorio.cs" />
     <Compile Include="RepositorioVentas.cs" />
     <Compile Include="UsuariosBLL.cs" />
+    <Compile Include="utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

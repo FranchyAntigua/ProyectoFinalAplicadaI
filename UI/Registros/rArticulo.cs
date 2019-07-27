@@ -21,14 +21,9 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private bool Validar()
         {
             bool estado = false;
+            MyErrorProvider.Clear();
 
-            if (IdnumericUpDown.Value < 0)
-            {
-                MyErrorProvider.SetError(IdnumericUpDown,
-                    "No es un id válido");
-                estado = true;
-            }
-
+            
             if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
                 MyErrorProvider.SetError(DescripciontextBox,
@@ -38,7 +33,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
 
             if (MedidaComboBox.SelectedIndex < 0)
             {
-                MyErrorProvider.SetError(IdnumericUpDown,
+                MyErrorProvider.SetError(MedidaComboBox,
                     "Debe seleccionar una Medida");
                 estado = true;
             }
@@ -54,20 +49,6 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             {
                 MyErrorProvider.SetError(PrecionumericUpDown,
                     "No es un Precio válido");
-                estado = true;
-            }
-
-            if (String.IsNullOrWhiteSpace(InventariotextBox.Text))
-            {
-                MyErrorProvider.SetError(InventariotextBox,
-                    "No puede estar vacio");
-                estado = true;
-            }
-
-            if (String.IsNullOrWhiteSpace(GananciaTextBox.Text))
-            {
-                MyErrorProvider.SetError(GananciaTextBox,
-                    "No puede estar vacio");
                 estado = true;
             }
 
@@ -243,6 +224,11 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         }
 
         private void CostonumericUpDown_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RArticulo_Load(object sender, EventArgs e)
         {
 
         }

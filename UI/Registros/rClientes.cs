@@ -74,21 +74,21 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 estado = true;
             }
 
-            if (String.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text))
+            if (!CedulaMaskedTextBox.MaskFull)
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox,
                     "No puede estar vacio");
                 estado = true;
             }
 
-            if (String.IsNullOrWhiteSpace(CelularMaskedTextBox.Text))
+            if (!CelularMaskedTextBox.MaskFull)
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox,
                     "No puede estar vacio");
                 estado = true;
             }
 
-            if (String.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
+            if (!TelefonoMaskedTextBox.MaskFull)
             {
                 MyErrorProvider.SetError(TelefonoMaskedTextBox,
                     "No puede estar vacio");
@@ -102,19 +102,19 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 estado = true;
             }
 
-            if (CedulaMaskedTextBox.Text.Length < 11)//sino tiene 13 no es valido
+            if (!CedulaMaskedTextBox.MaskFull)//sino tiene 13 no es valido
             {
                 MyErrorProvider.SetError(CedulaMaskedTextBox, "No es válido");
                 estado = true;
             }
 
-            if (CelularMaskedTextBox.Text.Length < 10)//sino tiene 13 no es valido
+            if (!CelularMaskedTextBox.MaskFull)//sino tiene 13 no es valido
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "No es válido");
                 estado = true;
             }
 
-            if (TelefonoMaskedTextBox.Text.Length < 10)//sino tiene 13 no es valido
+            if (!TelefonoMaskedTextBox.MaskFull)//sino tiene 13 no es valido
             {
                 MyErrorProvider.SetError(TelefonoMaskedTextBox, "No es válido");
                 estado = true;

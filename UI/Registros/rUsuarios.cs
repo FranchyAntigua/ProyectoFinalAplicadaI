@@ -60,6 +60,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private bool Validar()
         {
             bool estado = false;
+            MyErrorProvider.Clear();
 
             string s = ContraseñatextBox.Text;
             string ss = ConfirmarTextBox.Text;
@@ -84,6 +85,12 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             {
                 MyErrorProvider.SetError(Nombre,
                     "No puede estar vacio");
+                estado = true;
+            }
+
+            if (NivelUsuarioComboBox.SelectedIndex < 0)
+            {
+                MyErrorProvider.SetError(NivelUsuarioComboBox, "Este campo obligatorio");
                 estado = true;
             }
 
@@ -126,7 +133,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             if (usuario != null)
             {
                 FechaIngresoDateTimePicker.Value = usuario.FechaIngreso;
-                NombretextBox.Text = usuario.Usuario;
+                NombretextBox.Text = usuario.Nombre;
                 EmailtextBox.Text = usuario.Email;
                 UsuariotextBox.Text = usuario.Usuario;
                 ContraseñatextBox.Text = usuario.Contrasena;

@@ -36,7 +36,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         private List<Usuarios> Buscar()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
-            //Expression<Func<Usuarios, bool>> filtro = f => true;
+            Expression<Func<Usuarios, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
 
             if (FiltroComboBox.SelectedIndex == 1)
@@ -85,9 +85,15 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         {
 
             if (RangoFechaCheckBox.Checked == true)
-                UsuariosConsultaDataGridView.DataSource = BuscarRangoFecha();
+            {
+                lista = BuscarRangoFecha();
+                UsuariosConsultaDataGridView.DataSource = lista;
+            }
             else
-                UsuariosConsultaDataGridView.DataSource = Buscar();
+            {
+                lista = Buscar();
+                UsuariosConsultaDataGridView.DataSource = lista;
+            }
         }
         private List<Usuarios> BuscarRangoFecha()
         {
@@ -108,7 +114,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     filtro = f => f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date;
                     break;
                 case 1://UsuarioId.
-                    id = Convert.ToInt32(CriterioTextBox.Text);
+                    id = utility.ToInt(CriterioTextBox.Text);
                     filtro = f => f.UsuarioId == id && (f.FechaIngreso >= FechaDesdeDateTimePicker.Value.Date && f.FechaIngreso <= FechaHastaDateTimePicker.Value.Date);
                     break;
                 case 2://Fecha.
@@ -124,20 +130,6 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             lista = UsuariosBLL.GetList(filtro);
             return lista;
         }
-
-        //private void ImprimirButton_Click_1(object sender, EventArgs e)
-        //{
-        //    if (listaUsuarios.Count == 0)
-        //    {
-        //        MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
-        //        rReporte.Visualizar("CrpUsuarios");
-        //    }
-        //}
         private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (FiltroComboBox.SelectedIndex == 1)
@@ -191,14 +183,16 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            if(lista.Count == 0)
+            if (lista.Count == 0)
             {
                 MessageBox.Show("No Hay Datos", "Reporte Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                rReporteUsuario rReporte = new rReporteUsuario(UsuariosBLL.GetList(filtro));
+                rReporteUsuario rReporte = new rReporteUsuario() {
+                    listaUsuarios = lista
+                };
                 rReporte.Visualizar("CrpUsuarios");
             }
         }
