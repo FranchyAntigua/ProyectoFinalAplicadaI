@@ -19,6 +19,14 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         {
             InitializeComponent();
         }
+
+         public static int ToInt(string valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor, out retorno);
+
+            return retorno;
+        }
         private List<EntradaArticulos> Buscar()
         {
             List<EntradaArticulos> lista = new List<EntradaArticulos>();
@@ -37,7 +45,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                 case 0://Todo.
                     break;
                 case 1://EntradaId.
-                    id = Convert.ToInt32(CriterioTextBox.Text);
+                    id = ToInt(CriterioTextBox.Text);
                     filtro = f => f.EntradaId == id;
                     break;
                 case 2://Fecha.
@@ -74,7 +82,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
                     filtro = f => f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date;
                     break;
                 case 1://EntradaId.
-                    id = Convert.ToInt32(CriterioTextBox.Text);
+                    id = utility.ToInt(CriterioTextBox.Text);
                     filtro = f => f.EntradaId == id && (f.Fecha >= FechaDesdeDateTimePicker.Value.Date && f.Fecha <= FechaHastaDateTimePicker.Value.Date);
                     break;
                 case 2://Fecha.

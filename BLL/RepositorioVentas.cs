@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-   public class RepositorioVentas : Repositorio<Ventas>
+    public class Repositorio : Repositorio<Ventas>
     {
         public override bool Guardar(Ventas ventas)
         {
@@ -105,9 +105,21 @@ namespace BLL
                 Contexto contexto = new Contexto();
 
                 SqlParameter ventaId = new SqlParameter("@VentaId", entity.VentaId);
-                string sql = "DELETE FROM VentasDetalles WHERE VentaId=@VentaId;";
+                SqlParameter[] parameters = { new SqlParameter("@VentaId", entity.VentaId), new SqlParameter("@ClienteId", entity.ClienteId) };
 
+                string sql = "DELETE FROM VentasDetalles WHERE VentaId=@VentaId;";
                 contexto.Database.ExecuteSqlCommand(sql, ventaId);
+
+                sql = "UPDATE cl SET cl.Deuda-=bce.Monto FROM Clientes cl " +
+                    "CROSS APPLY( select SUM(vd.Precio) monto from VentasDetalles vd WHERE VentaId=@VentaId) bce " +
+                    "WHERE cl.ClienteId=@ClienteId;";
+                contexto.Database.ExecuteSqlCommand(sql, parameters);
+
+                sql = $"UPDATE Clientes SET Deuda=ISNULL(Deuda,0)+{entity.Detalle.Sum(d => d.Precio * d.Cantidad)} WHERE ClienteId={entity.ClienteId} AND 1=@uno;";
+                SqlParameter[] parametros = { new SqlParameter("@uno",1)};
+
+                contexto.Database.ExecuteSqlCommand(sql, parametros);
+
                 contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                 foreach (VentasDetalles vd in entity.Detalle)
                 {

@@ -3,3 +3,8 @@
 ################################################################################
 
 /BLL/CobroBLL.cs
+/Entidades/Cobro.cs
+/Entidades/CobroDetalle.cs
+/UI/Registros/rRegistroCobro.cs
+/UI/Registros/rRegistroCobro.Designer.cs
+/UI/Registros/rRegistroCobro.resx

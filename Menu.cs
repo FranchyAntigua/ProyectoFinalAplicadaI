@@ -118,5 +118,15 @@ namespace ProyectoFinalAplicadaI
 
             rus.Show();
         }
+
+        private void VentasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cVentas rus = new cVentas()
+            {
+                MdiParent = this
+            };
+
+            rus.Show();
+        }
     }
 }

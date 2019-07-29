@@ -111,8 +111,7 @@
             this.ImprimirButton.Name = "ImprimirButton";
             this.ImprimirButton.Size = new System.Drawing.Size(70, 37);
             this.ImprimirButton.TabIndex = 29;
-            this.ImprimirButton.UseVisualStyleBackColor = true;
-            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click_1);
             // 
             // buttonBuscar
             // 

@@ -151,7 +151,10 @@
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
-            "Id"});
+            "EntradaId",
+            "Fecha",
+            "ArticuloId",
+            "Cantidad"});
             this.FiltroComboBox.Location = new System.Drawing.Point(368, 35);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(119, 21);

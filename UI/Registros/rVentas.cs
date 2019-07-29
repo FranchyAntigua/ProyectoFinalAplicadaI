@@ -226,7 +226,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
                 {
                     detalle.Add(
                 new VentasDetalles(
-                   id: detalle.Count+1,
+                   id: detalle.Count == 0 ? detalle.Count+1 : detalle.Max(d=> d.Id)+1,
                    ventaId: (int)VentaIdNumericUpDown.Value,
                    articuloId: Article.ArticuloId,
                    descripcion: Article.Descripcion,
@@ -281,7 +281,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         {
             Ventas venta;
             bool Paso = false;
-            RepositorioVentas repositorio = new RepositorioVentas();
+            Repositorio repositorio = new Repositorio();
             if (Validar())
             {
                 return;
@@ -298,7 +298,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
             else
             {
                 int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
-                RepositorioVentas repository = new RepositorioVentas();
+                Repositorio repository = new Repositorio();
                 Ventas ven = LlenaClase();
                 ven.VentaId = id;
 
@@ -325,7 +325,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
-            RepositorioVentas repository = new RepositorioVentas();
+            Repositorio repository = new Repositorio();
             Ventas ven = repository.Buscar(id);
 
             if (ven != null)
@@ -396,7 +396,7 @@ namespace ProyectoFinalAplicadaI.UI.Registros
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(VentaIdNumericUpDown.Value);
-            RepositorioVentas repositorio = new RepositorioVentas();
+            Repositorio repositorio = new Repositorio();
             Ventas ventas = repositorio.Buscar(id);
 
             if (ventas != null)

@@ -40,6 +40,7 @@
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaArticulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +109,8 @@
             this.usuariosToolStripMenuItem,
             this.clientesToolStripMenuItem1,
             this.articuloToolStripMenuItem,
-            this.entradaArticulosToolStripMenuItem1});
+            this.entradaArticulosToolStripMenuItem1,
+            this.ventasToolStripMenuItem1});
             this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
@@ -142,6 +144,13 @@
             this.entradaArticulosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.entradaArticulosToolStripMenuItem1.Text = "Entrada Articulos";
             this.entradaArticulosToolStripMenuItem1.Click += new System.EventHandler(this.EntradaArticulosToolStripMenuItem1_Click);
+            // 
+            // ventasToolStripMenuItem1
+            // 
+            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Text = "Ventas";
+            this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.VentasToolStripMenuItem1_Click);
             // 
             // Menu
             // 
@@ -179,5 +188,6 @@
         private System.Windows.Forms.ToolStripMenuItem articuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaArticulosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
     }
 }

@@ -16,7 +16,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
 {
     public partial class cUsuarios : Form
     {
-       private List<Usuarios> lista = new List<Usuarios>();
+        private List<Usuarios> lista = new List<Usuarios>();
         Expression<Func<Usuarios, bool>> filtro = f => true;
         public cUsuarios()
         {
@@ -97,7 +97,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
         }
         private List<Usuarios> BuscarRangoFecha()
         {
-            
+
             Expression<Func<Usuarios, bool>> filtro = f => true;
             int id = Convert.ToInt32(FiltroComboBox.SelectedIndex);
             if (FiltroComboBox.SelectedIndex != 0 && FiltroComboBox.SelectedIndex != 2)
@@ -181,7 +181,7 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             }
         }
 
-        private void ImprimirButton_Click(object sender, EventArgs e)
+        private void ImprimirButton_Click_1(object sender, EventArgs e)
         {
             if (lista.Count == 0)
             {
@@ -190,7 +190,8 @@ namespace ProyectoFinalAplicadaI.UI.Consultas
             }
             else
             {
-                rReporteUsuario rReporte = new rReporteUsuario() {
+                rReporteUsuarios rReporte = new rReporteUsuarios() { 
+
                     listaUsuarios = lista
                 };
                 rReporte.Visualizar("CrpUsuarios");

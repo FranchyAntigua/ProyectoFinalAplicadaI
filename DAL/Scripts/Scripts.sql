@@ -1,6 +1,6 @@
-create database PruebaFfssss
+create database PruebaF1
 go
-Use PruebaFfssss
+Use PruebaF1
 go
 create table Usuarios(
 UsuarioId int identity primary key,
@@ -24,10 +24,11 @@ Direccion varchar(100),
 Email varchar(100),
 Celular varchar(13),
 Telefono varchar(13),
-UsuarioId int
+UsuarioId int,
+Deuda DECIMAL(18,2)
 )
 
-create table Articulo(
+create table Articuloes(
 ArticuloId int identity primary key,
 Nombre varchar(50),
 Descripcion varchar(50),
@@ -36,6 +37,8 @@ Precio decimal(8,2),
 Ganancia decimal(8,2),
 Inventario decimal(8,2),
 Fecha datetime,
+Itbis DECIMAL(18,2),
+Medida VARCHAR(50)
 )
 
 create table EntradaArticulos(
